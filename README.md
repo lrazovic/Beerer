@@ -1,7 +1,6 @@
 ## Welcome to GitHub Pages
 
 Text to test page: "Hello World!"
-![Beer'er Logo] (file:///D:/Alessandro/Documents/5.Workshop_GTCWD/Berrer4.JPG)
 
 You can use the [editor on GitHub](https://github.com/lrazovic/Beerer/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
