@@ -1,39 +1,33 @@
-## Welcome to GitHub Pages
+![Placeholder Logo]()   
 
-Text to test page: "Hello World!"
+# Beerer
 
-You can use the [editor on GitHub](https://github.com/lrazovic/Beerer/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+*Short description and feature*
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+* * *
 
-### Markdown
+## [Survey](https://docs.google.com/forms/d/1kWSuHJnPAj1bPIlC0zPUXVjH7cd_kNpZJrJ4aZpEsnA)  
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Milestone 1
 
-```markdown
-Syntax highlighted code block
+• [Milestone 1 slides]()  
 
-# Header 1
-## Header 2
-### Header 3
+## Milestone 2
 
-- Bulleted
-- List
+• [Milestone 2 slides]()  
 
-1. Numbered
-2. List
+• [Demo]()
 
-**Bold** and _Italic_ and `Code` text
+## Milestone 3
 
-[Link](url) and ![Image](src)
-```
+• [Milestone 3 slides]()  
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+• [Demo]()
 
-### Jekyll Themes
+## Documentation
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lrazovic/Beerer/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+• [Docs!]()  
 
-### Support or Contact
+## Installation instructions
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ 
