@@ -26,7 +26,7 @@
 
 
 ## Issues section
-• [Issues]()
+• [Issues](https://github.com/lrazovic/Beerer/issues)
 
 ## Documentation
 
