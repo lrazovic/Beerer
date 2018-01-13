@@ -1,4 +1,4 @@
-![Placeholder Logo]()   
+![](https://github.com/lrazovic/Beerer/blob/master/Berrer4.JPG)   
 
 # Beerer
 
