@@ -24,6 +24,10 @@
 
 • [Demo]()
 
+
+## Issues section
+• [Issues]()
+
 ## Documentation
 
 • [Docs!]()  
