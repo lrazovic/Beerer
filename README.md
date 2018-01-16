@@ -12,7 +12,7 @@
 
 ### Milestone 1
 
-• [Milestone 1 slides]()  
+• [Milestone 1 slides](https://drive.google.com/open?id=1hClwiJgr6rrTc3AaohPoYBWq93Af8lKH)  
 
 ### Milestone 2
 
