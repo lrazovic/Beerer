@@ -1,4 +1,4 @@
-![](https://github.com/lrazovic/Beerer/blob/master/Berrer4.JPG)   
+![](https://github.com/lrazovic/Beerer/blob/gh-pages/Berrer4.JPG)   
 
 # Beerer
 
