@@ -1,7 +1,5 @@
 ![](https://github.com/lrazovic/Beerer/blob/gh-pages/Berrer4.JPG)   
 
-# Beerer
-
 *Short description and feature*
 
 * * *
