@@ -1,0 +1,4 @@
+scipy
+argparse
+pillow
+numpy
