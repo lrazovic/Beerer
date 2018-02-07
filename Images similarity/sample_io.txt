@@ -1,0 +1,13 @@
+$ pip3 install -r requirements.txt
+
+$ python3 main.py /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg "/Users/lrazovic/Desktop/Beerer/images/*"
+
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/gi1.jpg: 0.5653065
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/gi2.jpg: 0.4836882
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/gi3.jpg: 0.4695855
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg: 1
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/Mama3.jpg: 0.6831471
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/Mama4.jpg: 0.6271563
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/post1.jpg: 0.4678393
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/post2.jpg: 0.4106481
+$ /Users/lrazovic/Desktop/Beerer/images/Mama1.jpg - /Users/lrazovic/Desktop/Beerer/images/post3.jpg: 0.299289
