@@ -15,9 +15,9 @@ from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,
 
 def read_data():
     """ Reads in the dataset, and filters down ratings down to positive only"""
-    ratings = pandas.read_csv("/Users/lrazovic/Desktop/idea/src/Files/testRecommendation.csv")
+    ratings = pandas.read_csv(files_path + "testRecommendation.csv")
     positive = ratings[ratings.rating >= 1]
-    beers = pandas.read_csv("/Users/lrazovic/Desktop/idea/src/Files/testBeer.csv")
+    beers = pandas.read_csv(files_path + "testBeer.csv")
     m = coo_matrix((positive['rating'].astype(numpy.int32),
                     (positive['beerId'], positive['USR'])))
     m.data = numpy.ones(len(m.data))
@@ -48,7 +48,7 @@ def calculate_similar_beers():
     beer_lookup = dict((i, m) for i, m in zip(beers['beerId'], beers['name']))
     to_generate = sorted(list(beers['beerId']), key=lambda x: -user_count.get(x, 0))
 
-    with open('/Users/lrazovic/Desktop/idea/src/Files/result.csv', "w") as o:
+    with open(files_path + 'result.csv', "w") as o:
         for beerId in to_generate:
             if m.indptr[beerId] == m.indptr[beerId + 1]:
                 continue
@@ -58,5 +58,6 @@ def calculate_similar_beers():
 
 
 if __name__ == "__main__":
+    files_path = "/Users/lrazovic/Desktop/Beerer/dataset/"
     logging.basicConfig(level=logging.DEBUG)
     calculate_similar_beers()
