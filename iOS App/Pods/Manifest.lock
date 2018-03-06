@@ -1,0 +1,15 @@
+PODS:
+  - Pages (2.0.2)
+  - pop (1.0.10)
+
+DEPENDENCIES:
+  - Pages
+  - pop (= 1.0.10)
+
+SPEC CHECKSUMS:
+  Pages: 5564ac6035c48fef7a837049314f57507d263b11
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+
+PODFILE CHECKSUM: aab40decd70fa8a4ac31c05dc35c3101346495ef
+
+COCOAPODS: 1.4.0
