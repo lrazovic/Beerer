@@ -1,3 +1,9 @@
-beerId,name,CLR,AROMA,FLVR
-1,Peroni,Blonde,sweet,fruit
-3,Nastro Azzurro,Red,sweet,malto
+beerId,name,CLR,FLVR,AROMA
+1,Peroni,bionda,dolce,fruttata
+2,Aegir Kveite,bianca,equilibrata,standard
+3,Nastro Azzurro,rossa,dolce,maltosa
+4,Alto Tevere,bionda,dolce,standard
+5,Alto tevere goldie,ambrata,equilibrata,standard
+6,Alto tevere noire,scura,amaro,maltosa
+7,Guerilla,bianca,equilibrata,standard
+8,Phantasmagoria,ambrata,amaro,standard
