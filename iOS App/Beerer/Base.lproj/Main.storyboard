@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wpb-EW-2g5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZX-uC-Roi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,25 +13,11 @@
         <!--Favourite Beer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdj-nO-oRw">
-                                <rect key="frame" x="288" y="593" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo6-YS-fhi">
-                                <rect key="frame" x="288" y="592" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English-Style Brown Ale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcv-j9-j7A">
                                 <rect key="frame" x="16" y="135" width="248" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -39,19 +25,82 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEu-CR-S3h">
+                                <rect key="frame" x="16" y="170" width="648" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Laugar-Aupa-Tovarisch-Imperial-Stout-12_-Bottle-330ml" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-V2-nej">
+                                        <rect key="frame" x="8" y="0.0" width="130" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="VYj-F3-B7G" appends="YES" id="UrQ-51-1tM"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8wired-GypsyFunk2-1" translatesAutoresizingMaskIntoConstraints="NO" id="gs6-un-Eae">
+                                        <rect key="frame" x="146" y="0.0" width="130" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d61-jR-pnw">
+                                <rect key="frame" x="16" y="401" width="648" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cold_Spark_Bottle_Mock" translatesAutoresizingMaskIntoConstraints="NO" id="Rtl-2d-9zH">
+                                        <rect key="frame" x="8" y="0.0" width="130" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8wired-GypsyFunk2-1" translatesAutoresizingMaskIntoConstraints="NO" id="4J0-Em-HGe">
+                                        <rect key="frame" x="146" y="0.0" width="130" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Indian Pale Ale (IPA)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvT-56-1pN">
+                                <rect key="frame" x="16" y="366" width="207" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="G0S-bW-QlC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Beer" id="rP5-YK-ZFf"/>
                     <connections>
-                        <outlet property="direction" destination="qdj-nO-oRw" id="StI-Gv-fd0"/>
+                        <outlet property="beerOne" destination="aDn-V2-nej" id="NIf-Na-T9O"/>
+                        <outlet property="imgTap" destination="VYj-F3-B7G" id="hFk-oN-UuK"/>
                         <outlet property="tabBar" destination="WRh-SF-Mmr" id="bQo-cN-NHp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VYj-F3-B7G">
+                    <connections>
+                        <action selector="imgTap:" destination="BYZ-38-t0r" id="fTe-kl-AHG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1021.6" y="246.9265367316342"/>
+        </scene>
+        <!--Beer Info View Controller-->
+        <scene sceneID="t5Q-Xp-TKC">
+            <objects>
+                <viewController storyboardIdentifier="beerInfo" id="4dY-Oa-scQ" customClass="BeerInfoViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PnV-TW-6xs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rtQ-Up-nzR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7N-JU-J5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="249"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="g4l-Cc-HWq">
@@ -63,7 +112,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="0.0" height="0.0"/>
-                        <viewLayoutGuide key="safeArea" id="aST-6m-SI0"/>
                         <color key="selectedImageTintColor" red="0.97357147932052612" green="0.71582153935618598" blue="0.15066390381052863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -86,7 +134,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="4Cp-6k-rsq"/>
+                        <viewLayoutGuide key="safeArea" id="QuW-kZ-Gtd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="FWo-FT-Ya8"/>
                 </viewController>
@@ -102,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="5hZ-nH-QFx"/>
+                        <viewLayoutGuide key="safeArea" id="wAc-2I-mC3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Wp4-Eu-ClA"/>
                 </viewController>
@@ -118,7 +166,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="gIt-Ip-ED8"/>
+                        <viewLayoutGuide key="safeArea" id="Ajm-X0-lPm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pubs" id="7M6-Xg-K0g"/>
                 </viewController>
@@ -240,12 +288,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5e3-pC-edX" firstAttribute="trailing" secondItem="isT-tN-doh" secondAttribute="trailing" id="7ww-3l-Kin"/>
-                            <constraint firstItem="isT-tN-doh" firstAttribute="leading" secondItem="5e3-pC-edX" secondAttribute="leading" id="8jy-gV-UIH"/>
-                            <constraint firstItem="5e3-pC-edX" firstAttribute="bottom" secondItem="isT-tN-doh" secondAttribute="bottom" id="9w3-4o-hRq"/>
-                            <constraint firstItem="isT-tN-doh" firstAttribute="top" secondItem="5e3-pC-edX" secondAttribute="top" id="Ib8-1d-L4h"/>
+                            <constraint firstItem="GBS-My-3PC" firstAttribute="trailing" secondItem="isT-tN-doh" secondAttribute="trailing" id="7ww-3l-Kin"/>
+                            <constraint firstItem="isT-tN-doh" firstAttribute="leading" secondItem="GBS-My-3PC" secondAttribute="leading" id="8jy-gV-UIH"/>
+                            <constraint firstItem="GBS-My-3PC" firstAttribute="bottom" secondItem="isT-tN-doh" secondAttribute="bottom" id="9w3-4o-hRq"/>
+                            <constraint firstItem="isT-tN-doh" firstAttribute="top" secondItem="GBS-My-3PC" secondAttribute="top" id="Ib8-1d-L4h"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5e3-pC-edX"/>
+                        <viewLayoutGuide key="safeArea" id="GBS-My-3PC"/>
                     </view>
                     <navigationItem key="navigationItem" id="d0q-yb-9AC"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -267,13 +315,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Cards Left." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-XB-4bq">
-                                <rect key="frame" x="132.5" y="333" width="110" height="21"/>
+                                <rect key="frame" x="132.5" y="323" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3E-rw-qX0" customClass="SwipeableCardViewContainer" customModule="Beerer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="76.5" width="343" height="534"/>
+                                <rect key="frame" x="16" y="66.5" width="343" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="534" id="j4Y-DO-9pE"/>
@@ -304,13 +352,13 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bbo-XB-4bq" firstAttribute="centerY" secondItem="PZK-sb-PZE" secondAttribute="centerY" id="5Nr-aV-BMl"/>
-                            <constraint firstItem="u3E-rw-qX0" firstAttribute="centerY" secondItem="PZK-sb-PZE" secondAttribute="centerY" id="OY8-FP-QPv"/>
+                            <constraint firstItem="bbo-XB-4bq" firstAttribute="centerY" secondItem="2hJ-U8-399" secondAttribute="centerY" id="5Nr-aV-BMl"/>
+                            <constraint firstItem="u3E-rw-qX0" firstAttribute="centerY" secondItem="2hJ-U8-399" secondAttribute="centerY" id="OY8-FP-QPv"/>
                             <constraint firstItem="u3E-rw-qX0" firstAttribute="leading" secondItem="2hJ-U8-399" secondAttribute="leadingMargin" id="RjJ-rp-BaD"/>
-                            <constraint firstItem="u3E-rw-qX0" firstAttribute="centerX" secondItem="PZK-sb-PZE" secondAttribute="centerX" id="VKQ-K6-FPY"/>
-                            <constraint firstItem="bbo-XB-4bq" firstAttribute="centerX" secondItem="PZK-sb-PZE" secondAttribute="centerX" id="xuu-tN-YeK"/>
+                            <constraint firstItem="u3E-rw-qX0" firstAttribute="centerX" secondItem="Hq1-HK-d5o" secondAttribute="centerX" id="VKQ-K6-FPY"/>
+                            <constraint firstItem="bbo-XB-4bq" firstAttribute="centerX" secondItem="Hq1-HK-d5o" secondAttribute="centerX" id="xuu-tN-YeK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PZK-sb-PZE"/>
+                        <viewLayoutGuide key="safeArea" id="Hq1-HK-d5o"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="feed" landscapeImage="feed" selectedImage="feed" id="olJ-hr-cAu">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
@@ -348,14 +396,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="8wired-GypsyFunk2-1" width="1124" height="1498"/>
         <image name="Camera" width="26" height="20"/>
+        <image name="Cold_Spark_Bottle_Mock" width="1124" height="1498"/>
         <image name="Icon" width="20" height="20"/>
+        <image name="Laugar-Aupa-Tovarisch-Imperial-Stout-12_-Bottle-330ml" width="1124" height="1498"/>
         <image name="feed" width="20" height="22"/>
         <image name="pub" width="16" height="21"/>
         <image name="user_male" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="udP-8Q-zbP"/>
-        <segue reference="j57-97-K6M"/>
+        <segue reference="dMd-GM-8Df"/>
     </inferredMetricsTieBreakers>
 </document>

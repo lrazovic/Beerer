@@ -2,6 +2,11 @@ import UIKit
 import pop
 
 class SwipeableView: UIView {
+    
+    // MARK: Local Variables
+    
+    private var json: Any?
+    static var beer = beerSetup(userId: "test", beerValue: [])
 
     var delegate: SwipeableViewDelegate?
 
@@ -140,7 +145,17 @@ class SwipeableView: UIView {
             translationAnimation?.fromValue = NSValue(cgPoint: POPLayerGetTranslationXY(layer))
             translationAnimation?.toValue = NSValue(cgPoint: animationPointForDirection(dragDirection))
             layer.pop_add(translationAnimation, forKey: "swipeTranslationAnimation")
-            print(dragDirection)
+            if dragDirection == .right { SwipeableView.beer.appenValue(value: 1) }
+            else if(dragDirection == .left) { SwipeableView.beer.appenValue(value: 0) }
+            else { SwipeableView.beer.appenValue(value: 2) }
+            let encodedData = try? JSONEncoder().encode(SwipeableView.beer)
+            if let data = encodedData {
+                json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            }
+            if SwipeableView.beer.countBeer() == 9 {
+                print(json!)
+                print("End Setup")
+            }
             //myVC.stringPassed = myLabel.text!
             //navigationController?.pushViewController(myVC, animated: true)
             self.delegate?.didEndSwipe(onView: self)

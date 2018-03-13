@@ -1,32 +1,25 @@
 import UIKit
 import Pages
 
-class ViewController: UIViewController, SwipeableCardViewDataSource {
+class CardViewController: UIViewController, SwipeableCardViewDataSource {
 
     @IBOutlet private weak var swipeableCardView: SwipeableCardViewContainer!
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet weak var direction: UILabel!
     
-    // MARK: Local Variables
-    var index: Int = 0
-    private var json: Any?
-    private var like = 0;
-    var beer = beerSetup(userId: "test", beerValue: [])
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let isFirstLaunch = UIApplication.isFirstLaunch()
         print(isFirstLaunch)
         swipeableCardView?.dataSource = self
-        
     }
 
 }
 
 // MARK: - SwipeableCardViewDataSource
 
-extension ViewController {
+extension CardViewController {
 
     func numberOfCards() -> Int {
         return viewModels.count
@@ -45,9 +38,7 @@ extension ViewController {
 
 }
 
-
-
-extension ViewController {
+extension CardViewController {
 
     var viewModels: [SampleSwipeableCellViewModel] {
 
@@ -87,9 +78,8 @@ extension ViewController {
                                                     subtitle: "Euro Strong Lager",
                                                     image: #imageLiteral(resourceName: "0641_tenn"))
 
-        return [peroni, ceres, becks, desperados, franz, guinness, heineken, tennent, nastro]
-        
-        // return [peroni, nastro]
+        // return [peroni, ceres, becks, desperados, franz, guinness, heineken, tennent, nastro]
+        return [peroni, ceres]
     }
 
 }
