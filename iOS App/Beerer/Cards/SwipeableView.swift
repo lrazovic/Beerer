@@ -5,6 +5,10 @@ class SwipeableView: UIView {
 
     var delegate: SwipeableViewDelegate?
 
+    private weak var shadowView: UIView?
+
+    var actualDirection: SwipeDirection?
+
     // MARK: Gesture Recognizer
 
     private var panGestureRecognizer: UIPanGestureRecognizer?
@@ -73,6 +77,15 @@ class SwipeableView: UIView {
 
         switch gestureRecognizer.state {
         case .began:
+
+            if dragDirection == .right  {
+                self.configureShadow(color: "r")
+            } else if dragDirection == .left {
+                self.configureShadow(color: "g")
+            } else if dragDirection == .up {
+                self.configureShadow(color: "b")
+            }
+            actualDirection = dragDirection
             let initialTouchPoint = gestureRecognizer.location(in: self)
             let newAnchorPoint = CGPoint(x: initialTouchPoint.x / bounds.width, y: initialTouchPoint.y / bounds.height)
             let oldPosition = CGPoint(x: bounds.size.width * layer.anchorPoint.x, y: bounds.size.height * layer.anchorPoint.y)
@@ -85,17 +98,29 @@ class SwipeableView: UIView {
             layer.shouldRasterize = true
             delegate?.didBeginSwipe(onView: self)
         case .changed:
+            if actualDirection != dragDirection {
+                self.shadowView?.removeFromSuperview()
+                if dragDirection == .right  {
+                    self.configureShadow(color: "r")
+                } else if dragDirection == .left {
+                    self.configureShadow(color: "g")
+                } else if dragDirection == .up {
+                    self.configureShadow(color: "b")
+                }
+                actualDirection = dragDirection
+            }
             let rotationStrength = min(panGestureTranslation.x / frame.width, SwipeableView.maximumRotation)
             let rotationAngle = SwipeableView.animationDirectionY * SwipeableView.rotationAngle * rotationStrength
-
             var transform = CATransform3DIdentity
             transform = CATransform3DRotate(transform, rotationAngle, 0, 0, 1)
             transform = CATransform3DTranslate(transform, panGestureTranslation.x, panGestureTranslation.y, 0)
             layer.transform = transform
         case .ended:
+            self.shadowView?.removeFromSuperview()
             endedPanAnimation()
             layer.shouldRasterize = false
         default:
+            self.shadowView?.removeFromSuperview()
             resetCardViewPosition()
             layer.shouldRasterize = false
         }
@@ -104,12 +129,12 @@ class SwipeableView: UIView {
     private var dragDirection: SwipeDirection? {
         let normalizedDragPoint = panGestureTranslation.normalizedDistanceForSize(bounds.size)
         return SwipeDirection.allDirections.reduce((distance: CGFloat.infinity, direction: nil), { closest, direction -> (CGFloat, SwipeDirection?) in
-            let distance = direction.point.distanceTo(normalizedDragPoint)
-            if distance < closest.distance {
-                return (distance, direction)
-            }
-            return closest
-        }).direction
+                let distance = direction.point.distanceTo(normalizedDragPoint)
+                if distance < closest.distance {
+                    return (distance, direction)
+                }
+                return closest
+            }).direction
     }
 
     private var dragPercentage: CGFloat {
@@ -141,8 +166,6 @@ class SwipeableView: UIView {
             translationAnimation?.toValue = NSValue(cgPoint: animationPointForDirection(dragDirection))
             layer.pop_add(translationAnimation, forKey: "swipeTranslationAnimation")
             print(dragDirection)
-            //myVC.stringPassed = myLabel.text!
-            //navigationController?.pushViewController(myVC, animated: true)
             self.delegate?.didEndSwipe(onView: self)
         } else {
             resetCardViewPosition()
@@ -161,7 +184,7 @@ class SwipeableView: UIView {
 
         // Reset Translation
         let resetPositionAnimation = POPSpringAnimation(propertyNamed: kPOPLayerTranslationXY)
-        resetPositionAnimation?.fromValue = NSValue(cgPoint:POPLayerGetTranslationXY(layer))
+        resetPositionAnimation?.fromValue = NSValue(cgPoint: POPLayerGetTranslationXY(layer))
         resetPositionAnimation?.toValue = NSValue(cgPoint: CGPoint.zero)
         resetPositionAnimation?.springBounciness = SwipeableView.cardViewResetAnimationSpringBounciness
         resetPositionAnimation?.springSpeed = SwipeableView.cardViewResetAnimationSpringSpeed
@@ -187,6 +210,31 @@ class SwipeableView: UIView {
 
     @objc private func tapRecognized(_ recognizer: UITapGestureRecognizer) {
         delegate?.didTap(view: self)
+    }
+
+    private func configureShadow(color: String) {
+        let shadowView = UIView(frame: CGRect(x: SampleSwipeableCard.kInnerMargin,
+            y: SampleSwipeableCard.kInnerMargin,
+            width: bounds.width - (2 * SampleSwipeableCard.kInnerMargin),
+            height: bounds.height - (2 * SampleSwipeableCard.kInnerMargin)))
+            insertSubview(shadowView, at: 0)
+            exchangeSubview(at: 0, withSubviewAt: 1)
+            self.shadowView = shadowView
+            self.applyShadow(width: CGFloat(0.0), height: CGFloat(0.0), color: color) 
+    }
+
+    private func applyShadow(width: CGFloat, height: CGFloat, color: String) {
+        if let shadowView = shadowView {
+            let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 14.0)
+            shadowView.layer.masksToBounds = false
+            shadowView.layer.shadowRadius = 8.0
+            shadowView.layer.shadowOffset = CGSize(width: width, height: height)
+            shadowView.layer.shadowOpacity = 0.5
+            shadowView.layer.shadowPath = shadowPath.cgPath
+            if color == "g" { shadowView.layer.shadowColor = UIColor.green.cgColor }
+            if color == "r" { shadowView.layer.shadowColor = UIColor.red.cgColor }
+            if color == "b" { shadowView.layer.shadowColor = UIColor.blue.cgColor }
+        }
     }
 
 }
