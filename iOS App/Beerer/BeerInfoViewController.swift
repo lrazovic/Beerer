@@ -7,21 +7,43 @@
 //
 
 import UIKit
+import Hero
 
 class BeerInfoViewController: UIViewController {
+    @IBOutlet var beerImage: UIImageView?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        hero.isEnabled = true
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
+    @IBAction func closeButton(_ sender: UIButton) {
+        print("button pressed")
+        navigationController?.hero.navigationAnimationType = .auto
+        self.hero.unwindToRootViewController()
+    }
     /*
     // MARK: - Navigation
 

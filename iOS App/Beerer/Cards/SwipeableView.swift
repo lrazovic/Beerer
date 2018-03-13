@@ -170,7 +170,6 @@ class SwipeableView: UIView {
             translationAnimation?.fromValue = NSValue(cgPoint: POPLayerGetTranslationXY(layer))
             translationAnimation?.toValue = NSValue(cgPoint: animationPointForDirection(dragDirection))
             layer.pop_add(translationAnimation, forKey: "swipeTranslationAnimation")
-<<<<<<< HEAD
             if dragDirection == .right { SwipeableView.beer.appenValue(value: 1) }
             else if(dragDirection == .left) { SwipeableView.beer.appenValue(value: 0) }
             else { SwipeableView.beer.appenValue(value: 2) }
@@ -182,11 +181,6 @@ class SwipeableView: UIView {
                 print(json!)
                 print("End Setup")
             }
-            //myVC.stringPassed = myLabel.text!
-            //navigationController?.pushViewController(myVC, animated: true)
-=======
-            print(dragDirection)
->>>>>>> dc8c493f7892c264529f3e11daf3ef4879db21e8
             self.delegate?.didEndSwipe(onView: self)
         } else {
             resetCardViewPosition()

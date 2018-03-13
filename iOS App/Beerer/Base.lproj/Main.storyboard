@@ -13,7 +13,7 @@
         <!--Favourite Beer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="beerHome" id="BYZ-38-t0r" customClass="CardsViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,38 +25,83 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEu-CR-S3h">
-                                <rect key="frame" x="16" y="170" width="648" height="188"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="PEu-CR-S3h">
+                                <rect key="frame" x="0.0" y="170" width="648" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Laugar-Aupa-Tovarisch-Imperial-Stout-12_-Bottle-330ml" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-V2-nej">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Laugar-Aupa-Tovarisch-Imperial-Stout-12_-Bottle-330ml" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-V2-nej">
                                         <rect key="frame" x="8" y="0.0" width="130" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                         </accessibility>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="VYj-F3-B7G" appends="YES" id="UrQ-51-1tM"/>
-                                        </connections>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="beer1"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8wired-GypsyFunk2-1" translatesAutoresizingMaskIntoConstraints="NO" id="gs6-un-Eae">
                                         <rect key="frame" x="146" y="0.0" width="130" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8wired-GypsyFunk2-1" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-Ah-ehU">
+                                        <rect key="frame" x="284" y="0.0" width="130" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="p7r-5q-mVy"/>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d61-jR-pnw">
-                                <rect key="frame" x="16" y="401" width="648" height="188"/>
+                                <rect key="frame" x="0.0" y="401" width="648" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cold_Spark_Bottle_Mock" translatesAutoresizingMaskIntoConstraints="NO" id="Rtl-2d-9zH">
                                         <rect key="frame" x="8" y="0.0" width="130" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cold_Spark_Bottle_Mock" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-vk-AO7">
+                                        <rect key="frame" x="284" y="0.0" width="130" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8wired-GypsyFunk2-1" translatesAutoresizingMaskIntoConstraints="NO" id="4J0-Em-HGe">
                                         <rect key="frame" x="146" y="0.0" width="130" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
                             </scrollView>
@@ -70,20 +115,22 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="G0S-bW-QlC"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="beer1"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Beer" id="rP5-YK-ZFf"/>
                     <connections>
-                        <outlet property="beerOne" destination="aDn-V2-nej" id="NIf-Na-T9O"/>
-                        <outlet property="imgTap" destination="VYj-F3-B7G" id="hFk-oN-UuK"/>
+                        <outlet property="beer1" destination="aDn-V2-nej" id="hgX-rf-ahb"/>
+                        <outlet property="beer2" destination="gs6-un-Eae" id="la1-Vm-t9N"/>
+                        <outlet property="beer3" destination="y8m-Ah-ehU" id="EQO-J5-7AG"/>
+                        <outlet property="beer4" destination="Rtl-2d-9zH" id="Zgo-En-AQP"/>
+                        <outlet property="beer5" destination="4J0-Em-HGe" id="MyT-Mt-xMZ"/>
+                        <outlet property="beer6" destination="t5n-vk-AO7" id="lfB-ci-z0T"/>
                         <outlet property="tabBar" destination="WRh-SF-Mmr" id="bQo-cN-NHp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="VYj-F3-B7G">
-                    <connections>
-                        <action selector="imgTap:" destination="BYZ-38-t0r" id="fTe-kl-AHG"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1021.6" y="246.9265367316342"/>
         </scene>
@@ -94,18 +141,68 @@
                     <view key="view" contentMode="scaleToFill" id="PnV-TW-6xs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Laugar-Aupa-Tovarisch-Imperial-Stout-12_-Bottle-330ml" translatesAutoresizingMaskIntoConstraints="NO" id="Pha-1f-dFk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmX-TG-hFd">
+                                <rect key="frame" x="331" y="52" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="aSU-gh-DIa"/>
+                                    <constraint firstAttribute="width" constant="28" id="bxP-bT-h4i"/>
+                                </constraints>
+                                <state key="normal" image="Close Icon"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeButton:" destination="4dY-Oa-scQ" eventType="touchUpInside" id="EcF-SY-FJb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rtQ-Up-nzR" firstAttribute="trailing" secondItem="MmX-TG-hFd" secondAttribute="trailing" constant="16" id="PNe-Kp-5Y1"/>
+                            <constraint firstItem="MmX-TG-hFd" firstAttribute="top" secondItem="rtQ-Up-nzR" secondAttribute="top" constant="32" id="Qhs-95-3XM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rtQ-Up-nzR"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="beer2"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="u3c-cg-EiE"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="beerImage" destination="Pha-1f-dFk" id="G5Y-K9-kgT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7N-JU-J5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="249"/>
+            <point key="canvasLocation" x="2601" y="246"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="g4l-Cc-HWq">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iZX-uC-Roi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabHome" automaticallyAdjustsScrollViewInsets="NO" id="iZX-uC-Roi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" autoresizesSubviews="NO" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="lMd-Kv-kCO">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -274,10 +371,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isT-tN-doh" userLabel="preView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFS-TH-cGe">
-                                        <rect key="frame" x="318" y="8" width="49" height="49"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFS-TH-cGe">
+                                        <rect key="frame" x="331" y="37" width="28" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="X"/>
+                                        <state key="normal" image="Close Icon"/>
                                         <connections>
                                             <segue destination="iZX-uC-Roi" kind="showDetail" animates="NO" id="j57-97-K6M"/>
                                         </connections>
@@ -394,10 +491,33 @@
             </objects>
             <point key="canvasLocation" x="192" y="246.47676161919043"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E8u-Eg-SUO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sE5-Ua-Pdc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uES-b5-7yp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="4dY-Oa-scQ" kind="relationship" relationship="rootViewController" id="IRH-JX-BtT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wnh-Uf-5eO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761.5999999999999" y="248.27586206896552"/>
+        </scene>
     </scenes>
     <resources>
         <image name="8wired-GypsyFunk2-1" width="1124" height="1498"/>
         <image name="Camera" width="26" height="20"/>
+        <image name="Close Icon" width="28" height="28"/>
         <image name="Cold_Spark_Bottle_Mock" width="1124" height="1498"/>
         <image name="Icon" width="20" height="20"/>
         <image name="Laugar-Aupa-Tovarisch-Imperial-Stout-12_-Bottle-330ml" width="1124" height="1498"/>

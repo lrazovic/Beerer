@@ -6,6 +6,7 @@ target 'Beerer' do
   use_frameworks!
 
   # Pods for Beerer
+  pod 'Hero'
   pod 'pop', '1.0.10'
   pod 'Pages'
   pod 'Firebase/Core'
