@@ -17,7 +17,7 @@ class SampleSwipeableCard: SwipeableCardViewCard {
     private weak var shadowView: UIView?
 
     /// Inner Margin
-    private static let kInnerMargin: CGFloat = 12.0
+    public static let kInnerMargin: CGFloat = 12.0
 
     var viewModel: SampleSwipeableCellViewModel? {
         didSet {
@@ -64,6 +64,7 @@ class SampleSwipeableCard: SwipeableCardViewCard {
             shadowView.layer.shadowOffset = CGSize(width: width, height: height)
             shadowView.layer.shadowOpacity = 0.15
             shadowView.layer.shadowPath = shadowPath.cgPath
+            
         }
     }
 

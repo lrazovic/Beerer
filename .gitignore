@@ -3,3 +3,4 @@
 iOS App/.DS_Store
 iOS App/Podfile.lock
 iOS App/Pods/*
+*.xcuserstate
