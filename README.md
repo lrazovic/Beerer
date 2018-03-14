@@ -1,6 +1,6 @@
 ![](https://github.com/lrazovic/Beerer/blob/gh-pages/Berrer4.JPG)   
 
-*Short description and feature*
+*Google Technologies for Cloud and Web Development*
 
 * * *
 
@@ -31,4 +31,5 @@
 • [Docs!]()  
 
 ### Installation instructions
- 
+
+• [Instruction]()   
