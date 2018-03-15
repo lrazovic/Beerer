@@ -2,9 +2,9 @@ import UIKit
 import pop
 
 class SwipeableView: UIView {
-    
+
     // MARK: Local Variables
-    
+
     private var json: Any?
     static var beer = beerSetup(userId: "test", beerValue: [])
 
@@ -83,10 +83,10 @@ class SwipeableView: UIView {
         switch gestureRecognizer.state {
         case .began:
 
-            if dragDirection == .right  {
-                self.configureShadow(color: "r")
-            } else if dragDirection == .left {
+            if dragDirection == .right {
                 self.configureShadow(color: "g")
+            } else if dragDirection == .left {
+                self.configureShadow(color: "r")
             } else if dragDirection == .up {
                 self.configureShadow(color: "b")
             }
@@ -105,10 +105,10 @@ class SwipeableView: UIView {
         case .changed:
             if actualDirection != dragDirection {
                 self.shadowView?.removeFromSuperview()
-                if dragDirection == .right  {
-                    self.configureShadow(color: "r")
-                } else if dragDirection == .left {
+                if dragDirection == .right {
                     self.configureShadow(color: "g")
+                } else if dragDirection == .left {
+                    self.configureShadow(color: "r")
                 } else if dragDirection == .up {
                     self.configureShadow(color: "b")
                 }
@@ -180,6 +180,8 @@ class SwipeableView: UIView {
             if SwipeableView.beer.countBeer() == 9 {
                 print(json!)
                 print("End Setup")
+                let homeViewController = self.parentViewController().storyboard?.instantiateViewController(withIdentifier: "tabHome")
+                self.parentViewController().present(homeViewController!, animated: true, completion: nil)
             }
             self.delegate?.didEndSwipe(onView: self)
         } else {
@@ -232,24 +234,42 @@ class SwipeableView: UIView {
             y: SampleSwipeableCard.kInnerMargin,
             width: bounds.width - (2 * SampleSwipeableCard.kInnerMargin),
             height: bounds.height - (2 * SampleSwipeableCard.kInnerMargin)))
-            insertSubview(shadowView, at: 0)
-            exchangeSubview(at: 0, withSubviewAt: 1)
-            self.shadowView = shadowView
-            self.applyShadow(width: CGFloat(0.0), height: CGFloat(0.0), color: color) 
+        insertSubview(shadowView, at: 0)
+        exchangeSubview(at: 0, withSubviewAt: 1)
+        self.shadowView = shadowView
+        self.applyShadow(width: CGFloat(0.0), height: CGFloat(0.0), color: color)
     }
 
     private func applyShadow(width: CGFloat, height: CGFloat, color: String) {
         if let shadowView = shadowView {
-            let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 14.0)
+            let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 16.0)
             shadowView.layer.masksToBounds = false
-            shadowView.layer.shadowRadius = 8.0
+            shadowView.layer.shadowRadius = 24.0
             shadowView.layer.shadowOffset = CGSize(width: width, height: height)
-            shadowView.layer.shadowOpacity = 0.5
+            shadowView.layer.shadowOpacity = 1
             shadowView.layer.shadowPath = shadowPath.cgPath
-            if color == "g" { shadowView.layer.shadowColor = UIColor.green.cgColor }
-            if color == "r" { shadowView.layer.shadowColor = UIColor.red.cgColor }
-            if color == "b" { shadowView.layer.shadowColor = UIColor.blue.cgColor }
+            let green = UIColor(red:0.46, green:0.84, blue:0.00, alpha:1.0)
+            let red = UIColor(red:0.95, green:0.25, blue:0.29, alpha:1.0)
+            let blue = UIColor(red:0.00, green:0.50, blue:1.00, alpha:1.0)
+            if color == "g" { shadowView.layer.shadowColor = green.cgColor }
+            if color == "r" { shadowView.layer.shadowColor = red.cgColor  }
+            if color == "b" { shadowView.layer.shadowColor = blue.cgColor  }
         }
     }
 
+}
+
+extension UIView
+    {
+        //Get Parent View Controller from any view
+        func parentViewController() -> UIViewController {
+            var responder: UIResponder? = self
+            while !(responder is UIViewController) {
+                responder = responder?.next
+                if nil == responder {
+                    break
+                }
+            }
+            return (responder as? UIViewController)!
+        }
 }
