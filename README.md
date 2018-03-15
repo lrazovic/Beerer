@@ -4,7 +4,7 @@
 
 [Web Site](https://lrazovic.github.io/Beerer/)
 
-*Short description and feature*
+*Google Technologies for Cloud and Web Development*
 
 * * *
 
