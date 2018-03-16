@@ -11,6 +11,8 @@
 		7D364B342047EE5100083C30 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D364B332047EE5100083C30 /* ProfileViewController.swift */; };
 		7D364B36204834AE00083C30 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D364B35204834AE00083C30 /* SearchViewController.swift */; };
 		7D364B3820483A7200083C30 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D364B3720483A7200083C30 /* CameraViewController.swift */; };
+		7D45EAE8205BD6700088663F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45EAE7205BD6700088663F /* CollectionViewCell.swift */; };
+		7D45EAEA205BE2B50088663F /* BeerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45EAE9205BE2B50088663F /* BeerStruct.swift */; };
 		7D4BDD16203735700057C5B1 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BDD15203735700057C5B1 /* FirstLaunch.swift */; };
 		7D8ACCEF2051D79A00EF4535 /* BeerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8ACCEE2051D79A00EF4535 /* BeerSetup.swift */; };
 		7DA9A7DC20582EAA00F8A6F4 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */; };
@@ -44,6 +46,8 @@
 		7D364B332047EE5100083C30 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7D364B35204834AE00083C30 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7D364B3720483A7200083C30 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		7D45EAE7205BD6700088663F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		7D45EAE9205BE2B50088663F /* BeerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerStruct.swift; sourceTree = "<group>"; };
 		7D4BDD15203735700057C5B1 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		7D8ACCEE2051D79A00EF4535 /* BeerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerSetup.swift; sourceTree = "<group>"; };
 		7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				7D935FDE203A043D002B6FA8 /* Cards */,
 				F7A387061F9BB6E400EF5B45 /* AppDelegate.swift */,
 				F7A3870A1F9BB6E400EF5B45 /* Main.storyboard */,
+				7D45EAE7205BD6700088663F /* CollectionViewCell.swift */,
 				F7A3870F1F9BB6E400EF5B45 /* LaunchScreen.storyboard */,
 				F7A387121F9BB6E400EF5B45 /* Info.plist */,
 				7D364B312047EA8700083C30 /* Assets.xcassets */,
@@ -164,6 +169,7 @@
 				7D364B332047EE5100083C30 /* ProfileViewController.swift */,
 				7D364B3720483A7200083C30 /* CameraViewController.swift */,
 				7D364B35204834AE00083C30 /* SearchViewController.swift */,
+				7D45EAE9205BE2B50088663F /* BeerStruct.swift */,
 			);
 			path = Beerer;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				F7FC2CFD1F9C06A500EEF1CE /* CGRect+SwipeAdditions.swift in Sources */,
 				F7A3871B1F9BB85100EF5B45 /* SwipeableCardViewCard.swift in Sources */,
 				7D8ACCEF2051D79A00EF4535 /* BeerSetup.swift in Sources */,
+				7D45EAE8205BD6700088663F /* CollectionViewCell.swift in Sources */,
 				F7FC2D031F9C144300EEF1CE /* SwipeableCardViewDelegate.swift in Sources */,
 				F7FC2D011F9C132F00EEF1CE /* SwipeableViewDelegate.swift in Sources */,
 				7DA9A7DC20582EAA00F8A6F4 /* CardsViewController.swift in Sources */,
@@ -328,6 +335,7 @@
 				7DA9A7DE205832D300F8A6F4 /* BeerInfoViewController.swift in Sources */,
 				7D364B3820483A7200083C30 /* CameraViewController.swift in Sources */,
 				F7A3871F1F9BB8D800EF5B45 /* NibView.swift in Sources */,
+				7D45EAEA205BE2B50088663F /* BeerStruct.swift in Sources */,
 				7D4BDD16203735700057C5B1 /* FirstLaunch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

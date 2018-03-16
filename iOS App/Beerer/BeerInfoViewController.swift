@@ -11,7 +11,14 @@ import Hero
 
 class BeerInfoViewController: UIViewController {
     @IBOutlet var beerImage: UIImageView?
-    var image: UIImage!
+    @IBOutlet weak var beerName: UILabel!
+    @IBOutlet weak var beerVariety: UILabel!
+    @IBOutlet weak var beerTemp: UILabel!
+    @IBOutlet weak var beerDescription: UILabel!
+    @IBOutlet weak var beerMatch: UILabel!
+    
+    var passedBeer: Beer!
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -19,20 +26,24 @@ class BeerInfoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        self.tabBarController?.tabBar.isHidden = true
         UIApplication.shared.isStatusBarHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        self.tabBarController?.tabBar.isHidden = false
         UIApplication.shared.isStatusBarHidden = false
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        beerImage?.image = image
+        self.tabBarController?.tabBar.isHidden = true
+        self.beerImage?.image = passedBeer.beerImage
+        self.beerName.text = passedBeer.beerName.uppercased()
+        self.beerVariety.text = passedBeer.beerVariety
+        self.beerTemp.text = String(passedBeer.beerTemp)
+        self.beerDescription.text = "“" + passedBeer.beerDescription + "“"
+        self.beerMatch.text = String(passedBeer.beerPercentage) + "%"
         hero.isEnabled = true
     }
 

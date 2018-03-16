@@ -16,8 +16,29 @@ class CardsViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet weak var beerCollectionOne: UICollectionView!
     @IBOutlet weak var beerCollectionTwo: UICollectionView!
-    let images1: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"),#imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"),#imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
+    let beerImages1: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"),#imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"),#imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
+    let beerImages2: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"),#imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"),#imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
+    let beerNames1 = ["Gipsy Funk","Sheltered Spirit","Partizan","Cold Spark","Bras","Peroni"]
+    let beerNames2 = ["Gipsy Funk","Sheltered Spirit","Partizan","Cold Spark","Bras","Peroni"]
+    let beerVariery1 = ["Brown","Brown","Brown","Brown","Brown","Brown"]
+    let beerVariery2 = ["Blonde","Blonde","Blonde","Blonde","Blonde","Blonde"]
+    let beerDescription1 = ["English brown ale features a nutty malt flavor with a caramel aroma.",
+                            "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
+                            "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt",
+                            "English brown ale features a nutty malt flavor with a caramel aroma.",
+                            "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
+                            "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt"]
+    let beerDescription2 = ["English brown ale features a nutty malt flavor with a caramel aroma.",
+                            "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
+                            "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt",
+                            "English brown ale features a nutty malt flavor with a caramel aroma.",
+                            "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
+                            "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt"]
+    let beerTemp1 = [4,5,4.5,6,2,6]
+    let beerTemp2 = [3,5,4.5,6.5,4,6]
+    let beerPercentage1 = [78,80,91,77,64,79]
+    let beerPercentage2 = [79,64,77,91,80,78]
+
 
     // MARK: - Default
 
@@ -29,36 +50,12 @@ class CardsViewController: UIViewController {
         beerCollectionTwo.dataSource = self
         hero.isEnabled = true
         navigationController?.hero.navigationAnimationType = .cover(direction: .up)
-        tapGesture.cancelsTouchesInView = false
-        beerCollectionOne.addGestureRecognizer(tapGesture)
-        beerCollectionTwo.addGestureRecognizer(tapGesture)
-        /*
-        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(tapGestureFunc))
-        let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(tapGestureFunc))
-        let tapGesture4 = UITapGestureRecognizer(target: self, action: #selector(tapGestureFunc))
-        let tapGesture5 = UITapGestureRecognizer(target: self, action: #selector(tapGestureFunc))
-        let tapGesture6 = UITapGestureRecognizer(target: self, action: #selector(tapGestureFunc))
-        beer1.addGestureRecognizer(tapGesture1)
-        beer2.addGestureRecognizer(tapGesture2)
-        beer3.addGestureRecognizer(tapGesture3)
-        beer4.addGestureRecognizer(tapGesture4)
-        beer5.addGestureRecognizer(tapGesture5)
-        beer6.addGestureRecognizer(tapGesture6)
-        beer1.isUserInteractionEnabled = true
-        beer2.isUserInteractionEnabled = true
-        beer3.isUserInteractionEnabled = true
-        beer4.isUserInteractionEnabled = true
-        beer5.isUserInteractionEnabled = true
-        beer6.isUserInteractionEnabled = true
- */
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeToInfo" {
             let toViewController = segue.destination as! BeerInfoViewController
-            let toBeerImage = sender as! UIImageView
-            toViewController.image = toBeerImage.image
+            toViewController.passedBeer = sender as! Beer
         }
     }
 
@@ -69,50 +66,38 @@ class CardsViewController: UIViewController {
 
     // MARK: - Functions
 
-    @objc func tap(sender: UITapGestureRecognizer){
-
-        if let indexPath = beerCollectionOne.indexPathForItem(at: sender.location(in: beerCollectionOne)) {
-            let cell = beerCollectionOne.cellForItem(at: indexPath)
-            print("you can do something with the cell or index path here")
-        } else {
-            print("collection view was tapped")
-        }
-    }
-
-     @objc func tapGestureFunc(gestureRecognizer: UITapGestureRecognizer) {
-        print("pressed")
-        let beerImageView = gestureRecognizer.view as! UIImageView
-        performSegue(withIdentifier: "homeToInfo", sender: beerImageView)
         // let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "beerInfo") as! BeerInfoViewController
         // self.present(secondViewController, animated: true, completion: nil)
-
-    }
-
 }
 
 // MARK: - Extensions
 
-extension CardsViewController: UIScrollViewDelegate {
-    // Put Scroll functionalities to ViewController
-    // func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    //     print(scrollView)
-    // }
-}
 
 extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images1.count
+        return beerImages1.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.beerCollectionOne {
-            let cellOne = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell1", for: indexPath)
-            let test = cellOne.contentView
+            let cellOne = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell1", for: indexPath) as! CollectionViewCell
+            cellOne.imageView1.image = beerImages1[indexPath.row]
             return cellOne
         } else {
-            let cellTwo = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell2", for: indexPath)
-            cellTwo.isUserInteractionEnabled = true
+            let cellTwo = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell2", for: indexPath) as! CollectionViewCell
+            cellTwo.imageView2.image = beerImages2[indexPath.row]
             return cellTwo
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.beerCollectionOne {
+            let selectedBeer: Beer = Beer(name: beerNames1[indexPath.row], variety: beerVariery1[indexPath.row], description: beerDescription1[indexPath.row], temp: beerTemp1[indexPath.row], percentage: beerPercentage1[indexPath.row], image: beerImages1[indexPath.row])
+            performSegue(withIdentifier: "homeToInfo", sender: selectedBeer)
+        } else {
+            let selectedBeer: Beer = Beer(name: beerNames2[indexPath.row], variety: beerVariery2[indexPath.row], description: beerDescription2[indexPath.row], temp: beerTemp2[indexPath.row], percentage: beerPercentage2[indexPath.row], image: beerImages2[indexPath.row])
+            performSegue(withIdentifier: "homeToInfo", sender: selectedBeer)
+        }
+    }
 }
+
