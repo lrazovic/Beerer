@@ -11,6 +11,9 @@
 		7D364B342047EE5100083C30 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D364B332047EE5100083C30 /* ProfileViewController.swift */; };
 		7D364B36204834AE00083C30 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D364B35204834AE00083C30 /* SearchViewController.swift */; };
 		7D364B3820483A7200083C30 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D364B3720483A7200083C30 /* CameraViewController.swift */; };
+		7D39CE1A205D989E00FE6F21 /* WalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39CE19205D989E00FE6F21 /* WalkViewController.swift */; };
+		7D39CE1C205DB17700FE6F21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D39CE1B205DB17600FE6F21 /* GoogleService-Info.plist */; };
+		7D39CE1F205DB8F900FE6F21 /* SocialLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39CE1E205DB8F900FE6F21 /* SocialLoginViewController.swift */; };
 		7D45EAE8205BD6700088663F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45EAE7205BD6700088663F /* CollectionViewCell.swift */; };
 		7D45EAEA205BE2B50088663F /* BeerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45EAE9205BE2B50088663F /* BeerStruct.swift */; };
 		7D4BDD16203735700057C5B1 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BDD15203735700057C5B1 /* FirstLaunch.swift */; };
@@ -46,6 +49,10 @@
 		7D364B332047EE5100083C30 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7D364B35204834AE00083C30 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7D364B3720483A7200083C30 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		7D39CE19205D989E00FE6F21 /* WalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkViewController.swift; sourceTree = "<group>"; };
+		7D39CE1B205DB17600FE6F21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D39CE1D205DB45600FE6F21 /* Beerer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Beerer.entitlements; sourceTree = "<group>"; };
+		7D39CE1E205DB8F900FE6F21 /* SocialLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginViewController.swift; sourceTree = "<group>"; };
 		7D45EAE7205BD6700088663F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7D45EAE9205BE2B50088663F /* BeerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerStruct.swift; sourceTree = "<group>"; };
 		7D4BDD15203735700057C5B1 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
@@ -91,6 +98,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D39CE20205DBF7C00FE6F21 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7A387081F9BB6E400EF5B45 /* ViewController.swift */,
+				7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */,
+				7D39CE1E205DB8F900FE6F21 /* SocialLoginViewController.swift */,
+				7DA9A7DD205832D300F8A6F4 /* BeerInfoViewController.swift */,
+				7D364B332047EE5100083C30 /* ProfileViewController.swift */,
+				7D364B3720483A7200083C30 /* CameraViewController.swift */,
+				7D364B35204834AE00083C30 /* SearchViewController.swift */,
+				7D39CE19205D989E00FE6F21 /* WalkViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		7D935FDE203A043D002B6FA8 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +178,8 @@
 		F7A387051F9BB6E400EF5B45 /* Beerer */ = {
 			isa = PBXGroup;
 			children = (
+				7D39CE20205DBF7C00FE6F21 /* Controller */,
+				7D39CE1D205DB45600FE6F21 /* Beerer.entitlements */,
 				7D935FDE203A043D002B6FA8 /* Cards */,
 				F7A387061F9BB6E400EF5B45 /* AppDelegate.swift */,
 				F7A3870A1F9BB6E400EF5B45 /* Main.storyboard */,
@@ -163,13 +187,8 @@
 				F7A3870F1F9BB6E400EF5B45 /* LaunchScreen.storyboard */,
 				F7A387121F9BB6E400EF5B45 /* Info.plist */,
 				7D364B312047EA8700083C30 /* Assets.xcassets */,
-				F7A387081F9BB6E400EF5B45 /* ViewController.swift */,
-				7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */,
-				7DA9A7DD205832D300F8A6F4 /* BeerInfoViewController.swift */,
-				7D364B332047EE5100083C30 /* ProfileViewController.swift */,
-				7D364B3720483A7200083C30 /* CameraViewController.swift */,
-				7D364B35204834AE00083C30 /* SearchViewController.swift */,
 				7D45EAE9205BE2B50088663F /* BeerStruct.swift */,
+				7D39CE1B205DB17600FE6F21 /* GoogleService-Info.plist */,
 			);
 			path = Beerer;
 			sourceTree = "<group>";
@@ -210,6 +229,11 @@
 					F7A387021F9BB6E400EF5B45 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -241,6 +265,7 @@
 				F7A3871D1F9BB87900EF5B45 /* SwipeableCardViewCard.xib in Resources */,
 				F7A3870C1F9BB6E400EF5B45 /* Main.storyboard in Resources */,
 				7D364B322047EA8700083C30 /* Assets.xcassets in Resources */,
+				7D39CE1C205DB17700FE6F21 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,9 +278,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Beerer/Pods-Beerer-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -287,17 +329,45 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Beerer/Pods-Beerer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/Pages/Pages.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -320,6 +390,7 @@
 				F7A3871B1F9BB85100EF5B45 /* SwipeableCardViewCard.swift in Sources */,
 				7D8ACCEF2051D79A00EF4535 /* BeerSetup.swift in Sources */,
 				7D45EAE8205BD6700088663F /* CollectionViewCell.swift in Sources */,
+				7D39CE1A205D989E00FE6F21 /* WalkViewController.swift in Sources */,
 				F7FC2D031F9C144300EEF1CE /* SwipeableCardViewDelegate.swift in Sources */,
 				F7FC2D011F9C132F00EEF1CE /* SwipeableViewDelegate.swift in Sources */,
 				7DA9A7DC20582EAA00F8A6F4 /* CardsViewController.swift in Sources */,
@@ -331,6 +402,7 @@
 				7D364B36204834AE00083C30 /* SearchViewController.swift in Sources */,
 				F7FC2CF71F9BC94400EEF1CE /* SwipeableView.swift in Sources */,
 				F7FC2CF91F9BD6D800EEF1CE /* SwipeDirection.swift in Sources */,
+				7D39CE1F205DB8F900FE6F21 /* SocialLoginViewController.swift in Sources */,
 				F7A387231F9BB93400EF5B45 /* SwipeableCardViewDataSource.swift in Sources */,
 				7DA9A7DE205832D300F8A6F4 /* BeerInfoViewController.swift in Sources */,
 				7D364B3820483A7200083C30 /* CameraViewController.swift in Sources */,
@@ -475,12 +547,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Beerer/Beerer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83GJCX62B5;
 				INFOPLIST_FILE = "$(SRCROOT)/Beerer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LR.Beerer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LR.Beerer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.0;
@@ -494,12 +567,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Beerer/Beerer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83GJCX62B5;
 				INFOPLIST_FILE = "$(SRCROOT)/Beerer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LR.Beerer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LR.Beerer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.0;

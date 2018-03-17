@@ -1,17 +1,17 @@
 import UIKit
+import Firebase
+import FirebaseAuthUI
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //private lazy var navigationController: UINavigationController = .init(
-      //  rootViewController: self.presentationController
-    //)
-    //private lazy var presentationController: ViewController = .init(pages: [])
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"1Eg2TNtwysz6ybrDytKLU8HR7",
+                                       consumerSecret:"YOy5v5QIIk7MxhqZPcQVpdMxl2Ps6mMKi2XmUTrzpOS7md9tnG")
         return true
     }
 

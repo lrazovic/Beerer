@@ -8,7 +8,9 @@ target 'Beerer' do
   # Pods for Beerer
   pod 'Hero'
   pod 'pop', '1.0.10'
-  pod 'Pages'
   pod 'Firebase/Core'
+  pod 'FirebaseUI'
+  pod 'Firebase/Auth'
+  pod 'TwitterKit'
 
 end

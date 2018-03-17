@@ -1,5 +1,4 @@
 import UIKit
-import Pages
 
 class ViewController: UIViewController, SwipeableCardViewDataSource {
 
@@ -15,16 +14,23 @@ class ViewController: UIViewController, SwipeableCardViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        swipeableCardView?.dataSource = self
         let isFirstLaunch = UIApplication.isFirstLaunch()
         print(isFirstLaunch)
-        swipeableCardView?.dataSource = self
+        if(isFirstLaunch) {}
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "firstSetup" {
+            let toViewController = segue.destination as! BeerInfoViewController
+            toViewController.passedBeer = sender as! Beer
+        }
+    }
 }
 
-// MARK: - SwipeableCardViewDataSource
+
+// MARK: - Extension
 
 extension ViewController {
 
@@ -44,8 +50,6 @@ extension ViewController {
     }
 
 }
-
-
 
 extension ViewController {
 
