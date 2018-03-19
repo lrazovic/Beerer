@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import Alamofire
 
 class CardsViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class CardsViewController: UIViewController {
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet weak var beerCollectionOne: UICollectionView!
     @IBOutlet weak var beerCollectionTwo: UICollectionView!
+
     let beerImages1: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"),#imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"),#imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
     let beerImages2: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"),#imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"),#imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
     let beerNames1 = ["Gipsy Funk","Sheltered Spirit","Partizan","Cold Spark","Bras","Peroni"]
@@ -38,12 +40,22 @@ class CardsViewController: UIViewController {
     let beerTemp2 = [3,5,4.5,6.5,4,6]
     let beerPercentage1 = [78,80,91,77,64,79]
     let beerPercentage2 = [79,64,77,91,80,78]
+    let pub1 = Pub(name: "Black Hole", city: "Civitavecchia")
+    let pub2 = Pub(name: "Recycle", city: "Civitavecchia")
+    let pub3 = Pub(name: "Pin Up", city: "Civitavecchia")
+    let pub4 = Pub(name: "Black Hole", city: "Civitavecchia")
+    let pub5 = Pub(name: "Black Hole", city: "Civitavecchia")
+    let pub6 = Pub(name: "Black Hole", city: "Civitavecchia")
+    var beerPubs1: [[Pub]]!
+    var beerPubs2: [[Pub]]!
 
 
     // MARK: - Default
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        beerPubs1 = [[pub1,pub2],[pub2],[pub3],[pub4],[pub5],[pub6]]
+        beerPubs2 = [[pub1,pub3],[pub2],[pub3],[pub4],[pub5],[pub6]]
         beerCollectionOne.delegate = self
         beerCollectionOne.dataSource = self
         beerCollectionTwo.delegate = self
@@ -55,6 +67,8 @@ class CardsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeToInfo" {
             let toViewController = segue.destination as! BeerInfoViewController
+            toViewController.hero.isEnabled = true
+            toViewController.hero.modalAnimationType = .cover(direction: .up)
             toViewController.passedBeer = sender as! Beer
         }
     }
@@ -86,18 +100,18 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         } else {
             let cellTwo = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell2", for: indexPath) as! CollectionViewCell
             cellTwo.imageView2.image = beerImages2[indexPath.row]
+            // cellTwo.beerNameLabel.text = beerNames2[indexPath.row]
             return cellTwo
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.beerCollectionOne {
-            let selectedBeer: Beer = Beer(name: beerNames1[indexPath.row], variety: beerVariery1[indexPath.row], description: beerDescription1[indexPath.row], temp: beerTemp1[indexPath.row], percentage: beerPercentage1[indexPath.row], image: beerImages1[indexPath.row])
+            let selectedBeer: Beer = Beer(name: beerNames1[indexPath.row], variety: beerVariery1[indexPath.row], description: beerDescription1[indexPath.row], temp: beerTemp1[indexPath.row], percentage: beerPercentage1[indexPath.row], image: beerImages1[indexPath.row], pubs: beerPubs1[indexPath.row])
             performSegue(withIdentifier: "homeToInfo", sender: selectedBeer)
         } else {
-            let selectedBeer: Beer = Beer(name: beerNames2[indexPath.row], variety: beerVariery2[indexPath.row], description: beerDescription2[indexPath.row], temp: beerTemp2[indexPath.row], percentage: beerPercentage2[indexPath.row], image: beerImages2[indexPath.row])
+            let selectedBeer: Beer = Beer(name: beerNames2[indexPath.row], variety: beerVariery2[indexPath.row], description: beerDescription2[indexPath.row], temp: beerTemp2[indexPath.row], percentage: beerPercentage2[indexPath.row], image: beerImages2[indexPath.row], pubs: beerPubs2[indexPath.row])
             performSegue(withIdentifier: "homeToInfo", sender: selectedBeer)
         }
     }
 }
-

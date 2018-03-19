@@ -12,6 +12,7 @@ import AVFoundation
 
 class CameraViewController: UIViewController {
     
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var previewView: UIView!
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -32,6 +33,7 @@ class CameraViewController: UIViewController {
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = view.layer.bounds
             previewView.layer.addSublayer(videoPreviewLayer!)
+            previewView.addSubview(closeButton)
             captureSession?.startRunning()
         } catch {
             print(error)

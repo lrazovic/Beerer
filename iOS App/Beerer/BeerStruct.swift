@@ -15,13 +15,15 @@ struct Beer {
     let beerTemp: Double
     let beerPercentage: Int
     let beerImage: UIImage
+    let beerPubs:[Pub]
 
-    init(name: String, variety: String, description: String, temp: Double, percentage: Int, image: UIImage){
+    init(name: String, variety: String, description: String, temp: Double, percentage: Int, image: UIImage, pubs: [Pub]){
         self.beerName = name
         self.beerVariety = variety
         self.beerDescription = description
         self.beerTemp = temp
         self.beerPercentage = percentage
         self.beerImage = image
+        self.beerPubs = pubs
     }
 }

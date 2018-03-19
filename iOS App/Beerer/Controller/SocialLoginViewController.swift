@@ -7,36 +7,13 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseGoogleAuthUI
-import FirebaseFacebookAuthUI
-import FirebaseTwitterAuthUI
-import FirebaseAuthUI
 
-class SocialLoginViewController: UIPageViewController, FUIAuthDelegate  {
 
-    fileprivate(set) var auth:Auth?
-    fileprivate(set) var authUI: FUIAuth? //only set internally but get externally
-    fileprivate(set) var authStateListenerHandle: AuthStateDidChangeListenerHandle?
-
-    let providers: [FUIAuthProvider] = [
-        FUIGoogleAuth(),
-        FUIFacebookAuth(),
-        FUITwitterAuth(),
-        ]
+class SocialLoginViewController: UIPageViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.auth = Auth.auth()
-        self.authUI = FUIAuth.defaultAuthUI()
-        self.authUI?.delegate = self
-        self.authUI?.providers = providers
-        // self.authStateListenerHandle = self.auth?.addStateDidChangeListener { (auth, user) in
-         //    guard user != nil else {
-          //       self.loginAction(sender: self)
-          //      return
-           //  }
         }
 
 

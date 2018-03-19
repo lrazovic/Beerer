@@ -8,16 +8,53 @@
 
 import UIKit
 import Hero
+import Alamofire
+import SwiftyJSON
 
 class BeerInfoViewController: UIViewController {
+
+    // MARK: - Variables
+
     @IBOutlet var beerImage: UIImageView?
     @IBOutlet weak var beerName: UILabel!
     @IBOutlet weak var beerVariety: UILabel!
     @IBOutlet weak var beerTemp: UILabel!
     @IBOutlet weak var beerDescription: UILabel!
     @IBOutlet weak var beerMatch: UILabel!
-    
+    @IBOutlet weak var beerPubsLabel: UIButton!
     var passedBeer: Beer!
+    var url: String!
+    let googleKey = "AIzaSyDT9VTFyh8hW6YzcHtiejByvnlUJNmZ210"
+    var swiftyJsonVar: JSON!
+    var latitude: String!
+    var longitude: String!
+
+    // MARK: - IBAction
+
+    @IBAction func beerPub(_ sender: UIButton) {
+        self.url = "https://maps.googleapis.com/maps/api/geocode/json?address=\(passedBeer.beerPubs[0].pubName.replacingOccurrences(of: " ", with: ""))+\(passedBeer.beerPubs[0].pubCity.replacingOccurrences(of: " ", with: ""))&key=\(googleKey)"
+        Alamofire.request(url).validate().responseJSON { response in
+            switch response.result {
+            case .success:
+                let swiftyJsonVar = JSON(response.result.value!)
+                if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+                    UIApplication.shared.open(URL(string:"comgooglemaps://?saddr=&daddr=\(swiftyJsonVar["results"][0]["geometry"]["location"]["lat"].stringValue),\(swiftyJsonVar["results"][0]["geometry"]["location"]["lng"].stringValue)&directionsmode=driving")!, options: [:], completionHandler: nil)
+                }
+                else {
+                    print("Can't use comgooglemaps://");
+                }
+            case .failure:
+                print("Errore")
+            }
+        }
+
+    }
+
+    @IBAction func closeButton(_ sender: UIButton) {
+        self.hero.dismissViewController()
+    }
+
+    // MARK: - View
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -25,13 +62,13 @@ class BeerInfoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         UIApplication.shared.isStatusBarHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         UIApplication.shared.isStatusBarHidden = false
     }
 
@@ -44,17 +81,17 @@ class BeerInfoViewController: UIViewController {
         self.beerTemp.text = String(passedBeer.beerTemp)
         self.beerDescription.text = "“" + passedBeer.beerDescription + "“"
         self.beerMatch.text = String(passedBeer.beerPercentage) + "%"
+        self.beerPubsLabel.setTitle(passedBeer.beerPubs[0].pubName, for: .normal)
         hero.isEnabled = true
+        let maskImageView = UIImageView()
+        maskImageView.contentMode = .scaleAspectFit
+        maskImageView.image = #imageLiteral(resourceName: "Sfondo")
+        maskImageView.frame = (beerImage?.bounds)!
+        beerImage?.mask = maskImageView
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-
-    @IBAction func closeButton(_ sender: UIButton) {
-        navigationController?.hero.navigationAnimationType = .auto
-        self.hero.unwindToRootViewController()
     }
 
 }

@@ -10,6 +10,7 @@ class ViewController: UIViewController, SwipeableCardViewDataSource {
     var index: Int = 0
     private var json: Any?
     private var like = 0;
+    
     var beer = beerSetup(userId: "test", beerValue: [])
 
     override func viewDidLoad() {
