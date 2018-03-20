@@ -7,8 +7,10 @@ target 'Beerer' do
 
   # Pods for Beerer
   pod 'Hero'
-  pod 'pop', '1.0.10'
+  pod 'pop'
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod "Lock"
+  pod 'Auth0'
 
 end

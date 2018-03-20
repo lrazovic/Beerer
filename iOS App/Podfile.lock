@@ -1,21 +1,34 @@
 PODS:
   - Alamofire (4.7.0)
+  - Auth0 (1.10.1):
+    - SimpleKeychain
   - Hero (1.1.0)
+  - Lock (2.5.1):
+    - Auth0 (~> 1.10)
+    - Lock/Classic (= 2.5.1)
+  - Lock/Classic (2.5.1):
+    - Auth0 (~> 1.10)
   - pop (1.0.10)
+  - SimpleKeychain (0.8.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Auth0
   - Hero
-  - pop (= 1.0.10)
+  - Lock
+  - pop
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Auth0: 9d36ee6f452b7bd0af3907cb6c674425599e6f0e
   Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
+  Lock: 3a64cd61770ea568839272cb9fc2308490ad341e
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  SimpleKeychain: 84c748463eec601dfee5e7990f55cc82edc5488d
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 2410a3211bb34901bcb6fa670a8e18799886b60b
+PODFILE CHECKSUM: a389df1e74edb4744e52c8518e478bad964bef16
 
 COCOAPODS: 1.4.0

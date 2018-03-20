@@ -5,12 +5,12 @@ class ViewController: UIViewController, SwipeableCardViewDataSource {
     @IBOutlet private weak var swipeableCardView: SwipeableCardViewContainer!
     @IBOutlet weak var tabBar: UITabBarItem!
     @IBOutlet weak var direction: UILabel!
-    
+
     // MARK: Local Variables
     var index: Int = 0
     private var json: Any?
     private var like = 0;
-    
+
     var beer = beerSetup(userId: "test", beerValue: [])
 
     override func viewDidLoad() {
@@ -18,8 +18,8 @@ class ViewController: UIViewController, SwipeableCardViewDataSource {
         swipeableCardView?.dataSource = self
         let isFirstLaunch = UIApplication.isFirstLaunch()
         print(isFirstLaunch)
-        if(isFirstLaunch) {}
-        
+        if(isFirstLaunch) { }
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,43 +57,43 @@ extension ViewController {
     var viewModels: [SampleSwipeableCellViewModel] {
 
         let peroni = SampleSwipeableCellViewModel(title: "Peroni",
-                                                     subtitle: "Euro Pale Lager",
-                                                     image:#imageLiteral(resourceName: "0629_peroni"))
+                                                  subtitle: "Euro Pale Lager",
+                                                  image: #imageLiteral(resourceName: "0629_peroni"))
 
         let ceres = SampleSwipeableCellViewModel(title: "Ceres",
-                                                  subtitle: "Euro Strong Lager",
-                                                  image: #imageLiteral(resourceName: "0584_ceres"))
+                                                 subtitle: "Euro Strong Lager",
+                                                 image: #imageLiteral(resourceName: "0584_ceres"))
 
         let becks = SampleSwipeableCellViewModel(title: "Beck's",
                                                  subtitle: "German Pilsener",
-                                                  image: #imageLiteral(resourceName: "0579_becks"))
+                                                 image: #imageLiteral(resourceName: "0579_becks"))
 
         let desperados = SampleSwipeableCellViewModel(title: "Desperados",
-                                                  subtitle: "American Pale Lager",
-                                                  image: #imageLiteral(resourceName: "0586_desperados"))
+                                                      subtitle: "American Pale Lager",
+                                                      image: #imageLiteral(resourceName: "0586_desperados"))
 
         let franz = SampleSwipeableCellViewModel(title: "Franziskaner",
-                                                  subtitle: "Hefeweizen",
-                                                  image: #imageLiteral(resourceName: "0853_franz"))
+                                                 subtitle: "Hefeweizen",
+                                                 image: #imageLiteral(resourceName: "0853_franz"))
 
         let guinness = SampleSwipeableCellViewModel(title: "Guinness",
-                                                  subtitle: "Irish Dry Stout",
-                                                  image: #imageLiteral(resourceName: "0593_guinnessdraught"))
+                                                    subtitle: "Irish Dry Stout",
+                                                    image: #imageLiteral(resourceName: "0593_guinnessdraught"))
 
         let heineken = SampleSwipeableCellViewModel(title: "Heineken",
-                                                      subtitle: "Euro Pale Lager",
-                                                      image: #imageLiteral(resourceName: "0597_hein"))
+                                                    subtitle: "Euro Pale Lager",
+                                                    image: #imageLiteral(resourceName: "0597_hein"))
 
         let nastro = SampleSwipeableCellViewModel(title: "Nastro Azzurro",
-                                                 subtitle: "Euro Pale Lager",
-                                                 image: #imageLiteral(resourceName: "0621_nastro"))
+                                                  subtitle: "Euro Pale Lager",
+                                                  image: #imageLiteral(resourceName: "0621_nastro"))
 
         let tennent = SampleSwipeableCellViewModel(title: "Tennent’s Super",
-                                                    subtitle: "Euro Strong Lager",
-                                                    image: #imageLiteral(resourceName: "0641_tenn"))
+                                                   subtitle: "Euro Strong Lager",
+                                                   image: #imageLiteral(resourceName: "0641_tenn"))
 
         return [peroni, ceres, becks, desperados, franz, guinness, heineken, tennent, nastro]
-        
+
         // return [peroni, nastro]
     }
 

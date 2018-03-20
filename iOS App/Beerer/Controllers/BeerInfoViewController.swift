@@ -25,9 +25,6 @@ class BeerInfoViewController: UIViewController {
     var passedBeer: Beer!
     var url: String!
     let googleKey = "AIzaSyDT9VTFyh8hW6YzcHtiejByvnlUJNmZ210"
-    var swiftyJsonVar: JSON!
-    var latitude: String!
-    var longitude: String!
 
     // MARK: - IBAction
 
@@ -38,7 +35,9 @@ class BeerInfoViewController: UIViewController {
             case .success:
                 let swiftyJsonVar = JSON(response.result.value!)
                 if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-                    UIApplication.shared.open(URL(string:"comgooglemaps://?saddr=&daddr=\(swiftyJsonVar["results"][0]["geometry"]["location"]["lat"].stringValue),\(swiftyJsonVar["results"][0]["geometry"]["location"]["lng"].stringValue)&directionsmode=driving")!, options: [:], completionHandler: nil)
+                    let lat = swiftyJsonVar["results"][0]["geometry"]["location"]["lat"].stringValue
+                    let lon = swiftyJsonVar["results"][0]["geometry"]["location"]["lng"].stringValue
+                    UIApplication.shared.open(URL(string:"comgooglemaps://?saddr=&daddr=\(lat),\(lon)&directionsmode=driving")!, options: [:], completionHandler: nil)
                 }
                 else {
                     print("Can't use comgooglemaps://");
@@ -51,7 +50,7 @@ class BeerInfoViewController: UIViewController {
     }
 
     @IBAction func closeButton(_ sender: UIButton) {
-        self.hero.dismissViewController()
+        self.hero.unwindToRootViewController()
     }
 
     // MARK: - View
@@ -68,6 +67,7 @@ class BeerInfoViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         UIApplication.shared.isStatusBarHidden = false
     }
@@ -82,16 +82,20 @@ class BeerInfoViewController: UIViewController {
         self.beerDescription.text = "“" + passedBeer.beerDescription + "“"
         self.beerMatch.text = String(passedBeer.beerPercentage) + "%"
         self.beerPubsLabel.setTitle(passedBeer.beerPubs[0].pubName, for: .normal)
-        hero.isEnabled = true
+        self.maskImage()
+
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    func maskImage() {
         let maskImageView = UIImageView()
         maskImageView.contentMode = .scaleAspectFit
         maskImageView.image = #imageLiteral(resourceName: "Sfondo")
         maskImageView.frame = (beerImage?.bounds)!
         beerImage?.mask = maskImageView
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
 }

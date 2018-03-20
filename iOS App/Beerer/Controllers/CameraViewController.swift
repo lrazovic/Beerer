@@ -11,16 +11,16 @@ import Foundation
 import AVFoundation
 
 class CameraViewController: UIViewController {
-    
+
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var previewView: UIView!
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.tabBarController?.tabBar.isHidden = true
@@ -39,5 +39,5 @@ class CameraViewController: UIViewController {
             print(error)
         }
     }
-    
+
 }

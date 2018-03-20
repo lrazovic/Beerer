@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import Auth0
 
-class WalkViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource  {
+class WalkViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
 
     var pageControl = UIPageControl()
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: "w1"),
-                self.newVc(viewController: "w2")]
+        return [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "w1"),
+                UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "w2"),
+                UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "w3"),
+                UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "w4"),
+                UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "w5") as! SocialLoginViewController]
     }()
+
+        
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
-        self.view.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1.0)
+        self.view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0)
 
         // This sets up the first view that will show up on our page control
         if let firstViewController = orderedViewControllers.first {
@@ -35,12 +41,12 @@ class WalkViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     }
 
     func configurePageControl() {
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
+        pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 50, width: UIScreen.main.bounds.width, height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor(red:0.15, green:0.27, blue:0.34, alpha:0.5)
-        self.pageControl.currentPageIndicatorTintColor = UIColor(red:0.15, green:0.27, blue:0.34, alpha:1.0)
+        self.pageControl.pageIndicatorTintColor = UIColor(red: 0.15, green: 0.27, blue: 0.34, alpha: 0.5)
+        self.pageControl.currentPageIndicatorTintColor = UIColor(red: 0.15, green: 0.27, blue: 0.34, alpha: 1.0)
         self.view.addSubview(pageControl)
     }
 
@@ -52,7 +58,7 @@ class WalkViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
     }
-    
+
 
     /*
     // MARK: - Navigation

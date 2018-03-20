@@ -10,13 +10,13 @@ import UIKit
 import Foundation
 
 class SearchViewController: UIViewController {
-    
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
-    
+
     let searchController = UISearchController(searchResultsController: nil)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.tabBarController?.tabBar.isHidden = false
@@ -27,6 +27,6 @@ class SearchViewController: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
-    
+
+
 }
