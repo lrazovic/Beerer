@@ -23,24 +23,22 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>None</string>
-            <key>CFBundleURLName</key>
-            <string>auth0</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-            </array>
-        </dict>
-    </array>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>auth0</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>FacebookAppID</key>
-	<string>fb765793173613976</string>
-	<key>FacebookDisplayName</key>
-	<string>Beerer</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>comgooglemaps</string>
@@ -48,7 +46,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Recognize Beer</string>
+	<string>The camera is used to take cute pictures of beers.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
