@@ -19,6 +19,7 @@
 		7D45EAE8205BD6700088663F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45EAE7205BD6700088663F /* CollectionViewCell.swift */; };
 		7D45EAEA205BE2B50088663F /* BeerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45EAE9205BE2B50088663F /* BeerStruct.swift */; };
 		7D4BDD16203735700057C5B1 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BDD15203735700057C5B1 /* FirstLaunch.swift */; };
+		7D607F9E2063ACDE005442D6 /* PubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D607F9D2063ACDE005442D6 /* PubsViewController.swift */; };
 		7D66CA7B205E71BC0008BBBF /* ShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D66CA7A205E71BC0008BBBF /* ShadowLayer.swift */; };
 		7D8ACCEF2051D79A00EF4535 /* BeerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8ACCEE2051D79A00EF4535 /* BeerSetup.swift */; };
 		7D960415205F049000216D34 /* PubStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D960414205F049000216D34 /* PubStruct.swift */; };
@@ -62,6 +63,7 @@
 		7D45EAE7205BD6700088663F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7D45EAE9205BE2B50088663F /* BeerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerStruct.swift; sourceTree = "<group>"; };
 		7D4BDD15203735700057C5B1 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		7D607F9D2063ACDE005442D6 /* PubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubsViewController.swift; sourceTree = "<group>"; };
 		7D66CA7A205E71BC0008BBBF /* ShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLayer.swift; sourceTree = "<group>"; };
 		7D8ACCEE2051D79A00EF4535 /* BeerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerSetup.swift; sourceTree = "<group>"; };
 		7D960414205F049000216D34 /* PubStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubStruct.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				7D39CE1E205DB8F900FE6F21 /* SocialLoginViewController.swift */,
 				7D364B332047EE5100083C30 /* ProfileViewController.swift */,
 				F7A387081F9BB6E400EF5B45 /* ViewController.swift */,
+				7D607F9D2063ACDE005442D6 /* PubsViewController.swift */,
 				7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */,
 				7DA9A7DD205832D300F8A6F4 /* BeerInfoViewController.swift */,
 				7D364B3720483A7200083C30 /* CameraViewController.swift */,
@@ -374,6 +377,7 @@
 				F7FC2D091F9C38F800EEF1CE /* SampleSwipeableCellViewModel.swift in Sources */,
 				F7FC2CFB1F9BDB1400EEF1CE /* CGPoint+SwipeableAdditions.swift in Sources */,
 				F7A387091F9BB6E400EF5B45 /* ViewController.swift in Sources */,
+				7D607F9E2063ACDE005442D6 /* PubsViewController.swift in Sources */,
 				F7FC2CFD1F9C06A500EEF1CE /* CGRect+SwipeAdditions.swift in Sources */,
 				F7A3871B1F9BB85100EF5B45 /* SwipeableCardViewCard.swift in Sources */,
 				7D8ACCEF2051D79A00EF4535 /* BeerSetup.swift in Sources */,

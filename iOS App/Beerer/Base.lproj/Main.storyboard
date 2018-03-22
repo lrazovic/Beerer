@@ -496,30 +496,30 @@
                                         <rect key="frame" x="16" y="361" width="343" height="249"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="JJq-Bk-OZa">
-                                            <size key="itemSize" width="96" height="96"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="JJq-Bk-OZa">
+                                            <size key="itemSize" width="108" height="108"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="vIH-GX-v3d" customClass="CollectionViewCell" customModule="Beerer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDZ-BA-Ckg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTi-xW-HNc" customClass="ShadowLayer" customModule="Beerer" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8wired-GypsyFunk2-1" translatesAutoresizingMaskIntoConstraints="NO" id="jiv-wN-4Zi" userLabel="beerImage">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
@@ -579,18 +579,56 @@
         <!--Pubs-->
         <scene sceneID="Z10-64-klK">
             <objects>
-                <viewController id="Ygp-Nr-7Lu" sceneMemberID="viewController">
+                <viewController id="Ygp-Nr-7Lu" customClass="PubsViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X7H-ag-AM0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSy-pd-ZeQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="jQ2-AE-oKm"/>
+                                </constraints>
+                            </mapView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1uD-aL-Cpd">
+                                <rect key="frame" x="16" y="351" width="343" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0fv-7i-hJM">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eJS-av-dA7">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HSy-pd-ZeQ" firstAttribute="centerX" secondItem="X7H-ag-AM0" secondAttribute="centerX" id="3Ih-h6-e7Z"/>
+                            <constraint firstItem="HSy-pd-ZeQ" firstAttribute="trailing" secondItem="Ajm-X0-lPm" secondAttribute="trailing" id="C0d-VY-jdH"/>
+                            <constraint firstItem="HSy-pd-ZeQ" firstAttribute="top" secondItem="X7H-ag-AM0" secondAttribute="top" id="Eye-3l-nGL"/>
+                            <constraint firstItem="HSy-pd-ZeQ" firstAttribute="leading" secondItem="Ajm-X0-lPm" secondAttribute="leading" id="u5C-Ih-HWS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ajm-X0-lPm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pubs" id="7M6-Xg-K0g"/>
+                    <connections>
+                        <outlet property="mapView" destination="HSy-pd-ZeQ" id="9Pa-hz-OC4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zh-RB-D1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-766" y="1129"/>
+            <point key="canvasLocation" x="-767.20000000000005" y="1128.4857571214393"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Sz0-oQ-uP8">
@@ -642,11 +680,12 @@
         <!--Pub-->
         <scene sceneID="I4r-2t-gFD">
             <objects>
-                <navigationController title="Pub" automaticallyAdjustsScrollViewInsets="NO" id="vdU-Y6-gIQ" sceneMemberID="viewController">
+                <navigationController title="Pub" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="vdU-Y6-gIQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pub" image="pub" landscapeImage="pub" selectedImage="pub" id="2oT-cJ-Y4d">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ZUP-yd-Shd">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
