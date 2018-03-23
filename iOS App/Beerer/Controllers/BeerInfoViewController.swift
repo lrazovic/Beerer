@@ -77,8 +77,8 @@ class BeerInfoViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         self.beerImage?.image = passedBeer.beerImage
         self.beerName.text = passedBeer.beerName.uppercased()
-        self.beerVariety.text = passedBeer.beerVariety
-        self.beerTemp.text = String(passedBeer.beerTemp)
+        // self.beerVariety.text = passedBeer.beerVariety
+        self.beerTemp.text = String(passedBeer.beerTemp) + " %"
         self.beerDescription.text = "“" + passedBeer.beerDescription + "“"
         self.beerMatch.text = String(passedBeer.beerPercentage) + "%"
         self.beerPubsLabel.setTitle(passedBeer.beerPubs[0].pubName, for: .normal)

@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
         navigationController?.tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         //refreshControl = UIRefreshControl()
-        searchController.searchBar.placeholder = ""
+        searchController.searchBar.placeholder = "Search beers"
         searchController.searchBar.autocorrectionType = .no
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false

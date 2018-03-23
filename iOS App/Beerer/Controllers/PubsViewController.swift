@@ -99,7 +99,7 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pubCell", for: indexPath) as! PubCollectionViewCell
             if(swiftyJSONVar != nil) {
-                if(cell.pubImage == nil) {
+                if(cell.pubImage?.image == nil) {
                     let photoReference = swiftyJSONVar!["results"][indexPath.row]["photos"][0]["photo_reference"].stringValue
                     let photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(photoReference)&key=\(googleKey)"
                     cell.pubImage?.loadImageUsingCache(withUrl: photoUrl)
@@ -107,6 +107,13 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 cell.starRatings.settings.fillMode = .precise
                 cell.starRatings.rating = swiftyJSONVar!["results"][indexPath.row]["rating"].doubleValue
                 cell.titleLabel.text = swiftyJSONVar!["results"][indexPath.row]["name"].stringValue
+                if(swiftyJSONVar!["results"][indexPath.row]["opening_hours"]["open_now"].boolValue) {
+                    cell.distanceLabel.text = "Aperto Ora"
+                    // cell.distanceLabel.textColor
+                } else {
+                    cell.distanceLabel.text = "Chiuso"
+                    // cell.distanceLabel.textColor =
+                }
                 cell.layer.shadowColor = UIColor.lightGray.cgColor
                 cell.layer.shadowOffset = CGSize(width:0,height: 0)
                 cell.layer.shadowRadius = 6.0

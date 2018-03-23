@@ -18,31 +18,32 @@ class CardsViewController: UIViewController {
     @IBOutlet weak var beerCollectionOne: UICollectionView!
     @IBOutlet weak var beerCollectionTwo: UICollectionView!
 
-    let beerImages1: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"), #imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
-    let beerImages2: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"), #imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
-    let beerNames1 = ["Gipsy Funk", "Sheltered Spirit", "Partizan", "Cold Spark", "Bras", "Peroni"]
-    let beerNames2 = ["Gipsy Funk", "Sheltered Spirit", "Partizan", "Cold Spark", "Bras", "Peroni"]
+    let beerImages1: [UIImage]! = [#imageLiteral(resourceName: "De-Molen-good_bad_ugly.jpg"),#imageLiteral(resourceName: "Edge-Bras-KNuckles.jpg"),#imageLiteral(resourceName: "Guineu-Winter-Ale-6.8_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Kees-Wee-Heavy-Scotch-Ale-8.5_-330ml_brown.jpg"),#imageLiteral(resourceName: "Laugar – Txo Brown Ale.jpg")]
+    // let beerImages2: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"), #imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
+    let beerImages2: [UIImage]! = [#imageLiteral(resourceName: "ipa1.jpg"),#imageLiteral(resourceName: "ipa2.jpg"),#imageLiteral(resourceName: "ipa3.jpg"),#imageLiteral(resourceName: "ipa4.jpg"),#imageLiteral(resourceName: "ipa5.jpg"),#imageLiteral(resourceName: "ipa6.jpg")]
+    let beerNames1 = ["De Molen x Kees", "Edge – Brass", "Guineu – Winter", "Kees – Wee Heavy", "Laugar – Txo", "Oedipus"]
+    let beerNames2 = ["Browar Rockmill", "Juicy Delight", "Laugar", "Naparbier x La Quince", "Rascals – Wunderbar", "Rascals – Swankee"]
     let beerVariery1 = ["Brown", "Brown", "Brown", "Brown", "Brown", "Brown"]
     let beerVariery2 = ["Blonde", "Blonde", "Blonde", "Blonde", "Blonde", "Blonde"]
-    let beerDescription1 = ["English brown ale features a nutty malt flavor with a caramel aroma.",
-        "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
-        "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt",
-        "English brown ale features a nutty malt flavor with a caramel aroma.",
-        "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
+    let beerDescription1 = ["Netherland brown ale features a nutty malt flavor with a caramel aroma.",
+        "Brace yourself for a big flavourful wallop. Artfully crafted in collaboration with Longr, this beer delivers a seriously flavour that will have you coming back for more",
+        "Guineu, the name of this Barcelona brand, means fox in Catalan. Here they’ve created a shrewd Winter Ale, which is a dark coloured, full bodied beer.",
+        "Wee Heavy stands for Scotch Ale and in particular for the extra heavy Scotch Ale. Specially brewed for you for the cold and chilly winter months.",
+        "TXO! is an English Brown Ale from the Biscayan brewer Laugar. With moderate ABV, it is an easy but gentle beer with a some of maltiness.",
         "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt"]
     let beerDescription2 = ["English brown ale features a nutty malt flavor with a caramel aroma.",
-        "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
-        "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt",
-        "English brown ale features a nutty malt flavor with a caramel aroma.",
-        "English bitters are named for the bitter flavor that the hops present. They have fruity flavors and lower alcohol content.",
-        "Also known as extra special bitters, English pale ales have a strong hop flavor that is balanced by sweet malt"]
-    let beerTemp1 = [4, 5, 4.5, 6, 2, 6]
-    let beerTemp2 = [3, 5, 4.5, 6.5, 4, 6]
+        "Brewed with Hops Citra, Mosaic and Chinook, this beer is your regular heavily hopped fruit bomb.",
+        "Spain’s Laugar love to brew powerful and innovative beers, envisioning craft beer as a world where imagination has no limits.",
+        "Collaboration between La Quince and Naparbier. Brewed using 10 hops.",
+        "Wunderbar is Rascals’ wonderful experimental German IPA brewed with new breed German hops, Mandarina Bavaria and Hallertau Blanc.",
+        "American IPA meets Belgian Witbier. Swankee is a hybrid of the two styles, hopped like an American IPA with the malt bill of a wheat beer and fermented with Belgian Wit yeast."]
+    let beerTemp1 = [8.9, 9.2, 6.8, 8.5, 4.5, 6]
+    let beerTemp2 = [6.5, 6.5, 4, 6.5, 4, 6]
     let beerPercentage1 = [78, 80, 91, 77, 64, 79]
     let beerPercentage2 = [79, 64, 77, 91, 80, 78]
-    let pub1 = Pub(name: "Black Hole", city: "Civitavecchia")
-    let pub2 = Pub(name: "Recycle", city: "Civitavecchia")
-    let pub3 = Pub(name: "Pin Up", city: "Civitavecchia")
+    let pub1 = Pub(name: "Luppolo12", city: "Roma")
+    let pub2 = Pub(name: "Trinity College Pub", city: "Roma")
+    let pub3 = Pub(name: "Finnegan Irish Pub", city: "Roma")
     let pub4 = Pub(name: "A Mi Me Gusta", city: "Civitavecchia")
     let pub5 = Pub(name: "King Edward GastroPub", city: "Civitavecchia")
     let pub6 = Pub(name: "Trinity Pub", city: "Civitavecchia")
@@ -88,7 +89,8 @@ class CardsViewController: UIViewController {
 
 extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return beerImages1.count
+        if collectionView == self.beerCollectionOne { return beerImages1.count }
+        else { return beerImages2.count }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
