@@ -34,7 +34,6 @@ class SessionManager {
 
     private init () {
         self.credentialsManager = CredentialsManager(authentication: Auth0.authentication())
-        // _ = self.authentication.logging(enabled: true) // API Logging
     }
 
     func retrieveProfile(_ callback: @escaping (Error?) -> ()) {
@@ -54,7 +53,6 @@ class SessionManager {
     }
 
     func renewAuth(_ callback: @escaping (Error?) -> ()) {
-        // Check it is possible to return credentials before asking for Touch
         guard self.credentialsManager.hasValid() else {
             return callback(CredentialsManagerError.noCredentials)
         }
@@ -68,9 +66,7 @@ class SessionManager {
     }
 
     func logout() -> Bool {
-        // Remove credentials from KeyChain
         self.credentials = nil
-        // Clear session from browser
         let webAuth = Auth0.webAuth()
         webAuth.clearSession(federated: true) { _ in }
         return self.credentialsManager.clear()
@@ -78,7 +74,6 @@ class SessionManager {
 
     func store(credentials: Credentials) -> Bool {
         self.credentials = credentials
-        // Store credentials in KeyChain
         return self.credentialsManager.store(credentials: credentials)
     }
 }

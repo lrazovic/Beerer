@@ -20,11 +20,11 @@
 		7D45EAEA205BE2B50088663F /* BeerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45EAE9205BE2B50088663F /* BeerStruct.swift */; };
 		7D4BDD16203735700057C5B1 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BDD15203735700057C5B1 /* FirstLaunch.swift */; };
 		7D607F9E2063ACDE005442D6 /* PubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D607F9D2063ACDE005442D6 /* PubsViewController.swift */; };
-		7D66CA7B205E71BC0008BBBF /* ShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D66CA7A205E71BC0008BBBF /* ShadowLayer.swift */; };
 		7D8ACCEF2051D79A00EF4535 /* BeerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8ACCEE2051D79A00EF4535 /* BeerSetup.swift */; };
 		7D960415205F049000216D34 /* PubStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D960414205F049000216D34 /* PubStruct.swift */; };
 		7DA9A7DC20582EAA00F8A6F4 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */; };
 		7DA9A7DE205832D300F8A6F4 /* BeerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9A7DD205832D300F8A6F4 /* BeerInfoViewController.swift */; };
+		7DBAA6982063E26800821A64 /* PubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBAA6972063E26800821A64 /* PubCollectionViewCell.swift */; };
 		E3A4C18BD9F8FFF5EA08092A /* Pods_Beerer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9905423B95DA82D64FA8905D /* Pods_Beerer.framework */; };
 		F7A387071F9BB6E400EF5B45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A387061F9BB6E400EF5B45 /* AppDelegate.swift */; };
 		F7A387091F9BB6E400EF5B45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A387081F9BB6E400EF5B45 /* ViewController.swift */; };
@@ -64,11 +64,11 @@
 		7D45EAE9205BE2B50088663F /* BeerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerStruct.swift; sourceTree = "<group>"; };
 		7D4BDD15203735700057C5B1 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		7D607F9D2063ACDE005442D6 /* PubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubsViewController.swift; sourceTree = "<group>"; };
-		7D66CA7A205E71BC0008BBBF /* ShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLayer.swift; sourceTree = "<group>"; };
 		7D8ACCEE2051D79A00EF4535 /* BeerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerSetup.swift; sourceTree = "<group>"; };
 		7D960414205F049000216D34 /* PubStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubStruct.swift; sourceTree = "<group>"; };
 		7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		7DA9A7DD205832D300F8A6F4 /* BeerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerInfoViewController.swift; sourceTree = "<group>"; };
+		7DBAA6972063E26800821A64 /* PubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubCollectionViewCell.swift; sourceTree = "<group>"; };
 		9905423B95DA82D64FA8905D /* Pods_Beerer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beerer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0187923FD2E5CFD525BE52C /* Pods-Beerer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beerer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beerer/Pods-Beerer.release.xcconfig"; sourceTree = "<group>"; };
 		A8862332D7E886ADB81FEDFB /* Pods_Swipeable_View_Stack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swipeable_View_Stack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,13 +116,14 @@
 				7D39CE1E205DB8F900FE6F21 /* SocialLoginViewController.swift */,
 				7D364B332047EE5100083C30 /* ProfileViewController.swift */,
 				F7A387081F9BB6E400EF5B45 /* ViewController.swift */,
-				7D607F9D2063ACDE005442D6 /* PubsViewController.swift */,
+				7D45EAE7205BD6700088663F /* CollectionViewCell.swift */,
 				7DA9A7DB20582EAA00F8A6F4 /* CardsViewController.swift */,
 				7DA9A7DD205832D300F8A6F4 /* BeerInfoViewController.swift */,
 				7D364B3720483A7200083C30 /* CameraViewController.swift */,
 				7D364B35204834AE00083C30 /* SearchViewController.swift */,
 				7D39CE19205D989E00FE6F21 /* WalkViewController.swift */,
-				7D45EAE7205BD6700088663F /* CollectionViewCell.swift */,
+				7D607F9D2063ACDE005442D6 /* PubsViewController.swift */,
+				7DBAA6972063E26800821A64 /* PubCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -202,7 +203,6 @@
 				F7A3870A1F9BB6E400EF5B45 /* Main.storyboard */,
 				F7A3870F1F9BB6E400EF5B45 /* LaunchScreen.storyboard */,
 				F7A387121F9BB6E400EF5B45 /* Info.plist */,
-				7D66CA7A205E71BC0008BBBF /* ShadowLayer.swift */,
 				7D0C21AD205FC643002D3503 /* Auth0.plist */,
 			);
 			path = Beerer;
@@ -346,6 +346,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Beerer/Pods-Beerer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Lock/Lock.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
@@ -356,6 +357,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lock.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
@@ -378,6 +380,7 @@
 				F7FC2CFB1F9BDB1400EEF1CE /* CGPoint+SwipeableAdditions.swift in Sources */,
 				F7A387091F9BB6E400EF5B45 /* ViewController.swift in Sources */,
 				7D607F9E2063ACDE005442D6 /* PubsViewController.swift in Sources */,
+				7DBAA6982063E26800821A64 /* PubCollectionViewCell.swift in Sources */,
 				F7FC2CFD1F9C06A500EEF1CE /* CGRect+SwipeAdditions.swift in Sources */,
 				F7A3871B1F9BB85100EF5B45 /* SwipeableCardViewCard.swift in Sources */,
 				7D8ACCEF2051D79A00EF4535 /* BeerSetup.swift in Sources */,
@@ -398,7 +401,6 @@
 				F7FC2CF71F9BC94400EEF1CE /* SwipeableView.swift in Sources */,
 				F7FC2CF91F9BD6D800EEF1CE /* SwipeDirection.swift in Sources */,
 				7D39CE1F205DB8F900FE6F21 /* SocialLoginViewController.swift in Sources */,
-				7D66CA7B205E71BC0008BBBF /* ShadowLayer.swift in Sources */,
 				F7A387231F9BB93400EF5B45 /* SwipeableCardViewDataSource.swift in Sources */,
 				7DA9A7DE205832D300F8A6F4 /* BeerInfoViewController.swift in Sources */,
 				7D364B3820483A7200083C30 /* CameraViewController.swift in Sources */,

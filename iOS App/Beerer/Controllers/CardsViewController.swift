@@ -94,11 +94,27 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.beerCollectionOne {
             let cellOne = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell1", for: indexPath) as! CollectionViewCell
+            cellOne.contentView.layer.cornerRadius = 14
+            cellOne.contentView.layer.masksToBounds = true
             cellOne.imageView1.image = beerImages1[indexPath.row]
+            cellOne.layer.shadowColor = UIColor.lightGray.cgColor
+            cellOne.layer.shadowOffset = CGSize(width:0,height: 2.0)
+            cellOne.layer.shadowRadius = 6.0
+            cellOne.layer.shadowOpacity = 0.6
+            cellOne.layer.masksToBounds = false;
+            cellOne.layer.shadowPath = UIBezierPath(roundedRect:cellOne.bounds, cornerRadius:cellOne.contentView.layer.cornerRadius).cgPath
             return cellOne
         } else {
             let cellTwo = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell2", for: indexPath) as! CollectionViewCell
+            cellTwo.contentView.layer.cornerRadius = 14
+            cellTwo.contentView.layer.masksToBounds = true
             cellTwo.imageView2.image = beerImages2[indexPath.row]
+            cellTwo.layer.shadowColor = UIColor.lightGray.cgColor
+            cellTwo.layer.shadowOffset = CGSize(width:0,height: 2.0)
+            cellTwo.layer.shadowRadius = 6.0
+            cellTwo.layer.shadowOpacity = 0.6
+            cellTwo.layer.masksToBounds = false;
+            cellTwo.layer.shadowPath = UIBezierPath(roundedRect:cellTwo.bounds, cornerRadius:cellTwo.contentView.layer.cornerRadius).cgPath
             return cellTwo
         }
     }

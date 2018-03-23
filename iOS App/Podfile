@@ -12,5 +12,6 @@ target 'Beerer' do
   pod 'Alamofire'
   pod "Lock"
   pod 'Auth0'
+  pod 'Cosmos'
 
 end

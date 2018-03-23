@@ -12,6 +12,8 @@ import Auth0
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var beerCollection: UICollectionView!
+    @IBOutlet weak var beerNumberText: UILabel!
+
 
     let beerImages1: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"), #imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"), #imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
     let beerNames1 = ["Gipsy Funk", "Sheltered Spirit", "Partizan", "Cold Spark", "Bras", "Peroni","Gipsy Funk", "Sheltered Spirit", "Partizan", "Cold Spark", "Bras", "Peroni"]
@@ -46,11 +48,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        // guard let profile = SessionManager.shared.profile else { return }
-       //  print("Welcome, \(profile.givenName ?? "test")")
         beerPubs1 = [[pub1, pub2], [pub2], [pub3], [pub4], [pub5], [pub6],[pub1, pub2], [pub2], [pub3], [pub4], [pub5], [pub6]]
         beerCollection.delegate = self
         beerCollection.dataSource = self
+        self.beerNumberText.text = "\(beerNames1.count) beers drank! 🍻"
     
     }
 
@@ -66,8 +67,6 @@ class ProfileViewController: UIViewController {
 
 }
 
-
-
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return beerImages1.count
@@ -76,6 +75,14 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cellOne = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as! CollectionViewCell
             cellOne.profileBeerImage.image = beerImages1[indexPath.row]
+        cellOne.contentView.layer.cornerRadius = 14
+        cellOne.contentView.layer.masksToBounds = true
+        cellOne.layer.shadowColor = UIColor.lightGray.cgColor
+        cellOne.layer.shadowOffset = CGSize(width:0,height: 2.0)
+        cellOne.layer.shadowRadius = 6.0
+        cellOne.layer.shadowOpacity = 0.6
+        cellOne.layer.masksToBounds = false;
+        cellOne.layer.shadowPath = UIBezierPath(roundedRect:cellOne.bounds, cornerRadius:cellOne.contentView.layer.cornerRadius).cgPath
             return cellOne
 
     }

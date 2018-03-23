@@ -50,7 +50,7 @@ class BeerInfoViewController: UIViewController {
     }
 
     @IBAction func closeButton(_ sender: UIButton) {
-        self.hero.unwindToRootViewController()
+        self.hero.dismissViewController()
     }
 
     // MARK: - View
@@ -68,7 +68,7 @@ class BeerInfoViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         UIApplication.shared.isStatusBarHidden = false
     }
 

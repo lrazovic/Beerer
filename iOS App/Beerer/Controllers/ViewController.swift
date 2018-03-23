@@ -94,7 +94,6 @@ extension ViewController {
 
         return [peroni, ceres, becks, desperados, franz, guinness, heineken, tennent, nastro]
 
-        // return [peroni, nastro]
     }
 
 }

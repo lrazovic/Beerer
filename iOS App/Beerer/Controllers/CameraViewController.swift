@@ -11,6 +11,10 @@ import AVFoundation
 
 class CameraViewController: UIViewController {
 
+    @IBAction func scatta(_ sender: UIButton) {
+    }
+    @IBOutlet weak var scattaButton: UIButton!
+    @IBOutlet weak var sfondoView: UIImageView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var previewView: UIView!
     var captureSession: AVCaptureSession?
@@ -33,6 +37,8 @@ class CameraViewController: UIViewController {
             videoPreviewLayer?.frame = view.layer.bounds
             previewView.layer.addSublayer(videoPreviewLayer!)
             previewView.addSubview(closeButton)
+            previewView.addSubview(sfondoView)
+            previewView.addSubview(scattaButton)
             captureSession?.startRunning()
         } catch {
             print(error)

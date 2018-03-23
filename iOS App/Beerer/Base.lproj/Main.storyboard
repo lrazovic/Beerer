@@ -30,7 +30,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mqE-xf-ksJ">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mqE-xf-ksJ">
                                 <rect key="frame" x="16" y="170" width="343" height="188"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -54,15 +54,11 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUQ-A4-GzC">
                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="188"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFY-gv-F1k" customClass="ShadowLayer" customModule="Beerer" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFY-gv-F1k">
                                                             <rect key="frame" x="0.0" y="0.0" width="130" height="188"/>
                                                             <subviews>
                                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8wired-GypsyFunk2-1" translatesAutoresizingMaskIntoConstraints="NO" id="Azd-vT-4B2" userLabel="beerImage">
                                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="188"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="NO"/>
-                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -114,7 +110,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-W6-GHp" userLabel="Beer Collection Two">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-W6-GHp" userLabel="Beer Collection Two">
                                 <rect key="frame" x="16" y="401" width="343" height="188"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -192,7 +188,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="beerImage"/>
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
                         </subviews>
@@ -208,15 +203,10 @@
                             <constraint firstItem="ZvT-56-1pN" firstAttribute="top" secondItem="mqE-xf-ksJ" secondAttribute="bottom" constant="8" symbolic="YES" id="yfI-Z7-jJG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UXw-Db-oLG"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="NO"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="beer1"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Beer" id="rP5-YK-ZFf"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="beerCollectionOne" destination="mqE-xf-ksJ" id="lkw-eD-Z8d"/>
@@ -344,7 +334,7 @@
                                         <gestureRecognizers/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmX-TG-hFd">
-                                        <rect key="frame" x="339" y="28" width="28" height="28"/>
+                                        <rect key="frame" x="331" y="37" width="28" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Close Icon"/>
                                         <userDefinedRuntimeAttributes>
@@ -352,7 +342,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="closeButton:" destination="4dY-Oa-scQ" eventType="touchUpInside" id="EcF-SY-FJb"/>
+                                            <action selector="closeButton:" destination="4dY-Oa-scQ" eventType="touchUpInside" id="obC-yZ-uDt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -374,9 +364,8 @@
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="rtQ-Up-nzR"/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="NO"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="beerImage"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="u3c-cg-EiE"/>
@@ -514,7 +503,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTi-xW-HNc" customClass="ShadowLayer" customModule="Beerer" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTi-xW-HNc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
@@ -558,6 +547,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljt-tK-6bV">
+                                        <rect key="frame" x="84" y="275" width="205" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -568,6 +564,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="Wp4-Eu-ClA"/>
                     <connections>
                         <outlet property="beerCollection" destination="3UY-zH-NuD" id="ToQ-zr-BBP"/>
+                        <outlet property="beerNumberText" destination="Ljt-tK-6bV" id="xda-Hk-u5C"/>
                         <outlet property="nameSurname" destination="IWp-e6-M6P" id="QL1-pf-ADQ"/>
                         <segue destination="4dY-Oa-scQ" kind="show" identifier="profileToInfo" action="showDetailViewController:sender:" id="zb6-ig-eWP"/>
                     </connections>
@@ -593,26 +590,81 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1uD-aL-Cpd">
                                 <rect key="frame" x="16" y="351" width="343" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0fv-7i-hJM">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="0.0" id="0fv-7i-hJM">
+                                    <size key="itemSize" width="343" height="77"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eJS-av-dA7">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="pubCell" id="uOo-aO-XZe" customClass="PubCollectionViewCell" customModule="Beerer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTR-CW-EDN" userLabel="titleLabel">
+                                                    <rect key="frame" x="20" y="7" width="220" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHJ-y6-QfJ" userLabel="distanceLabel">
+                                                    <rect key="frame" x="20" y="28" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-zD-FZP" userLabel="starView" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="20" y="51" width="124" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                            <integer key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIh-Ny-icK">
+                                                    <rect key="frame" x="248" y="7" width="87" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="distanceLabel" destination="gHJ-y6-QfJ" id="eXK-uW-qn6"/>
+                                            <outlet property="pubImage" destination="PIh-Ny-icK" id="Lnc-0n-ILR"/>
+                                            <outlet property="starRatings" destination="Pgf-zD-FZP" id="9dv-pU-C2a"/>
+                                            <outlet property="titleLabel" destination="qTR-CW-EDN" id="6Dh-1m-eiD"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="HSy-pd-ZeQ" firstAttribute="centerX" secondItem="X7H-ag-AM0" secondAttribute="centerX" id="3Ih-h6-e7Z"/>
                             <constraint firstItem="HSy-pd-ZeQ" firstAttribute="trailing" secondItem="Ajm-X0-lPm" secondAttribute="trailing" id="C0d-VY-jdH"/>
@@ -624,6 +676,7 @@
                     <navigationItem key="navigationItem" title="Pubs" id="7M6-Xg-K0g"/>
                     <connections>
                         <outlet property="mapView" destination="HSy-pd-ZeQ" id="9Pa-hz-OC4"/>
+                        <outlet property="pubsColletion" destination="1uD-aL-Cpd" id="Fjh-xQ-k5I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zh-RB-D1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -666,6 +719,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="qlK-pc-GYW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -681,7 +735,7 @@
         <scene sceneID="I4r-2t-gFD">
             <objects>
                 <navigationController title="Pub" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="vdU-Y6-gIQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pub" image="pub" landscapeImage="pub" selectedImage="pub" id="2oT-cJ-Y4d">
+                    <tabBarItem key="tabBarItem" title="Pubs" image="pub" landscapeImage="pub" selectedImage="pub" id="2oT-cJ-Y4d">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -698,11 +752,11 @@
             </objects>
             <point key="canvasLocation" x="-1534" y="1129"/>
         </scene>
-        <!--Add-->
+        <!--Scan-->
         <scene sceneID="kqo-Ta-xgW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="c0m-qj-dV4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="Camera" landscapeImage="Camera" selectedImage="Camera" springLoaded="YES" id="XDO-Z1-ejj">
+                    <tabBarItem key="tabBarItem" title="Scan" image="Camera" landscapeImage="Camera" selectedImage="Camera" springLoaded="YES" id="XDO-Z1-ejj">
                         <color key="badgeColor" red="0.97357147929999999" green="0.71582153940000004" blue="0.1506639038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -737,8 +791,30 @@
                                             <segue destination="iZX-uC-Roi" kind="showDetail" animates="NO" id="j57-97-K6M"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sfontoFoto" translatesAutoresizingMaskIntoConstraints="NO" id="m7q-vB-Di4">
+                                        <rect key="frame" x="146" y="541" width="82" height="82"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIj-A4-l86">
+                                        <rect key="frame" x="151" y="546" width="72" height="72"/>
+                                        <state key="normal" image="scattaFoto">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="scatta:" destination="Sbs-xg-5m4" eventType="touchUpInside" id="KBr-FZ-gad"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="m7q-vB-Di4" firstAttribute="centerX" secondItem="isT-tN-doh" secondAttribute="centerX" id="5KM-mi-IZA"/>
+                                    <constraint firstAttribute="trailing" secondItem="m7q-vB-Di4" secondAttribute="trailing" constant="147" id="Jbo-9W-Lcz"/>
+                                    <constraint firstItem="GIj-A4-l86" firstAttribute="centerX" secondItem="isT-tN-doh" secondAttribute="centerX" id="Moe-fB-1JF"/>
+                                    <constraint firstItem="m7q-vB-Di4" firstAttribute="leading" secondItem="isT-tN-doh" secondAttribute="leading" constant="146" id="NqP-32-jdl"/>
+                                    <constraint firstAttribute="bottom" secondItem="GIj-A4-l86" secondAttribute="bottom" constant="29" id="QDp-zp-ZXk"/>
+                                    <constraint firstAttribute="bottom" secondItem="m7q-vB-Di4" secondAttribute="bottom" constant="24" id="SXO-D5-r8f"/>
+                                    <constraint firstAttribute="trailing" secondItem="GIj-A4-l86" secondAttribute="trailing" constant="152" id="aIP-kW-qrR"/>
+                                    <constraint firstItem="GIj-A4-l86" firstAttribute="leading" secondItem="isT-tN-doh" secondAttribute="leading" constant="151" id="r2D-cY-5kh"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -754,8 +830,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="closeButton" destination="cFS-TH-cGe" id="L4V-3M-IgL"/>
+                        <outlet property="closeButton" destination="cFS-TH-cGe" id="8cy-RP-GzJ"/>
                         <outlet property="previewView" destination="isT-tN-doh" id="YGe-T3-jis"/>
+                        <outlet property="scattaButton" destination="GIj-A4-l86" id="sRn-sp-1pB"/>
+                        <outlet property="sfondoView" destination="m7q-vB-Di4" id="m7X-T4-drV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NjH-fK-xZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -981,7 +1059,7 @@ Register</string>
                         <viewLayoutGuide key="safeArea" id="ZYa-AO-gxL"/>
                     </view>
                     <connections>
-                        <segue destination="wpb-EW-2g5" kind="showDetail" action="showViewController:sender:" id="57m-yr-iMl"/>
+                        <segue destination="wpb-EW-2g5" kind="showDetail" identifier="toCards" action="showViewController:sender:" id="57m-yr-iMl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alQ-1f-f83" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1055,6 +1133,7 @@ Register</string>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tON-pT-MQJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1174,10 +1253,12 @@ If you have never drunk it, swipe up!</string>
         <image name="Setting_icon_white" width="22" height="22"/>
         <image name="feed" width="20" height="22"/>
         <image name="pub" width="16" height="21"/>
+        <image name="scattaFoto" width="72" height="72"/>
+        <image name="sfontoFoto" width="82" height="82"/>
         <image name="user_male" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P9F-Uy-PtL"/>
-        <segue reference="zb6-ig-eWP"/>
+        <segue reference="j57-97-K6M"/>
+        <segue reference="YVQ-fP-DVq"/>
     </inferredMetricsTieBreakers>
 </document>
