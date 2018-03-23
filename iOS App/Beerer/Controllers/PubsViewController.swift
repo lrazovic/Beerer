@@ -62,11 +62,11 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let lat = userLocation.coordinate.latitude
         let long = userLocation.coordinate.longitude
         // print("posizione aggiornata - lat: \(lat) long: \(long)")
-        downloadJSON(latitude: String(lat), longitude: String(long))
+        if(swiftyJSONVar == nil) { downloadJSON(latitude: String(lat), longitude: String(long)) }
         let span = MKCoordinateSpanMake(0.01, 0.01)
         let region = MKCoordinateRegion(center: posizioneUtente, span: span)
         mapView.setRegion(region, animated: true)
-        if(swiftyJSONVar != nil) {
+        if(swiftyJSONVar != JSON.null) {
             if(swiftyJSONVar?["results"].count != 0) {
                 pubsColletion.reloadData()
             }
@@ -99,10 +99,10 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pubCell", for: indexPath) as! PubCollectionViewCell
             if(swiftyJSONVar != nil) {
-                if(cell.pubImage.image == nil) {
+                if(cell.pubImage == nil) {
                     let photoReference = swiftyJSONVar!["results"][indexPath.row]["photos"][0]["photo_reference"].stringValue
                     let photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(photoReference)&key=\(googleKey)"
-                    cell.pubImage.loadImageUsingCache(withUrl: photoUrl)
+                    cell.pubImage?.loadImageUsingCache(withUrl: photoUrl)
                 }
                 cell.starRatings.settings.fillMode = .precise
                 cell.starRatings.rating = swiftyJSONVar!["results"][indexPath.row]["rating"].doubleValue
