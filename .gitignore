@@ -6,6 +6,7 @@ iOS App/Pods/*
 *.xcuserstate
 *.lock
 *.xcbkptlist
+Reccomender/venv/*
 iOS App/Beerer.xcodeproj/project.pbxproj
 iOS App/Beerer.xcworkspace/contents.xcworkspacedata
 iOS App/Beerer.xcworkspace/xcuserdata/lrazovic.xcuserdatad/UserInterfaceState.xcuserstate

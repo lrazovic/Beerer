@@ -14,6 +14,7 @@ import csv
 from scipy.sparse import coo_matrix
 
 from implicit.als import AlternatingLeastSquares
+from implicit.bpr import BayesianPersonalizedRanking
 from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,
                                          TFIDFRecommender, bm25_weight)
 
@@ -80,27 +81,7 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
                 o.write("%s,%s,%s\n" % (beer, beer_lookup[other], score))
 
 if __name__ == "__main__":
-    """
-    parser = argparse.ArgumentParser(description="Generates related movies from the MovieLens 20M "
-                                                 "dataset (https://grouplens.org/datasets/movielens/20m/)",
-                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-
-    parser.add_argument('--input', type=str,
-                        dest='inputfile', help='Path of the unzipped ml-20m dataset', required=True)
-    parser.add_argument('--output', type=str, default='similar-movies.tsv',
-                        dest='outputfile', help='output file name')
-    parser.add_argument('--model', type=str, default='als',
-                        dest='model', help='model to calculate (als/bm25/tfidf/cosine)')
-    parser.add_argument('--min_rating', type=float, default=4.0, dest='min_rating',
-                        help='Minimum rating to assume that a rating is positive')
-    args = parser.parse_args()
-    """
-
     logging.basicConfig(level=logging.DEBUG)
-    """
-    calculate_similar_beers(args.inputfile, args.outputfile,
-                             model_name=args.model)
-    """
-    input = "/home/ale96/Documents/beerer/Beerer/.idea/src/dataset/"
-    output = "/home/ale96/Documents/beerer/Beerer/.idea/src/dataset/result.csv"
+    input = "/Users/lrazovic/Projects/Beerer/Reccomender/dataset/"
+    output = "/Users/lrazovic/Projects/Beerer/Reccomender/dataset/result.csv"
     calculate_similar_beers(input, output, "cosine")
