@@ -3,14 +3,17 @@ Recommender System
 """
 
 from __future__ import print_function
+from itertools import groupby 
+from collections import OrderedDict
 
 import argparse
+import codecs
 import logging
 import os
 import time
 import numpy
-import pandas
-import csv
+import pandas as pd
+import json
 from scipy.sparse import coo_matrix
 
 from implicit.als import AlternatingLeastSquares
@@ -21,10 +24,10 @@ from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,
 
 def read_data(path):
     """ Reads in the dataset, and filters down ratings down to positive only"""
-    ratings = pandas.read_csv(path + "testRecommendation.csv")
+    ratings = pd.read_csv(path + "testRecommendation.csv")
     positive = ratings[ratings.rating >= 1]
-    beers = pandas.read_csv(path + "testBeer.csv")
-    m = coo_matrix((positive['rating'].astype(numpy.int32),
+    beers = pd.read_csv(path + "testBeer.csv")
+    m = coo_matrix((positive['rating'].astype(numpy.float32),
                     (positive['beerId'], positive['USR'])))
     m.data = numpy.ones(len(m.data))
     return ratings, beers, m
@@ -71,14 +74,24 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
     user_count = ratings.groupby('beerId').size()
     beer_lookup = dict((i, m) for i, m in zip(beers['beerId'], beers['name']))
     to_generate = sorted(list(beers['beerId']), key=lambda x: -user_count.get(x, 0))
+    lun = len(m.indptr) - 1
 
-    with open(output_filename, "w") as o:
-        for beerId in to_generate:
-            if m.indptr[beerId] == m.indptr[beerId + 1]:
-                continue
-            beer = beer_lookup[beerId]
-            for other, score in model.similar_items(beerId, 11):
-                o.write("%s,%s,%s\n" % (beer, beer_lookup[other], score))
+    with codecs.open(output_filename, "w", "utf8") as o:
+        o.write("%s,%s,%s\n\n" % ("name1", "name2", "number"))
+        for beerid in to_generate:
+            if beerid < lun:
+                if m.indptr[beerid] == m.indptr[beerid + 1]:
+                    continue
+                beer = beer_lookup[beerid]
+                for other, score in model.similar_items(beerid, 11):
+                    o.write("%s,%s,%s\n" % (beer, beer_lookup[other], score))
+            else:
+                pass
+    
+    df = pd.read_csv("/Users/lrazovic/Projects/Beerer/Reccomender/dataset/result.csv")
+    df.to_json("/Users/lrazovic/Projects/Beerer/Reccomender/dataset/result.json")
+    
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
