@@ -22,40 +22,21 @@ from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,
 def choiceBeers(userId, path):
 
     # Get beerID for given userId
-    recommends = pd.read_csv(path + "testRecommendation.csv")
-    # print((recommends["USR"]) == userId) 
-    # data_filtered = recommends[userId]
-    idBeers = []  # list of beers-ID
+    recomends = pd.read_csv(path + "testRecommendation.csv")
+    filtered_data = recomends[recomends.USR == int(userId)]
+    beersId = filtered_data["beerId"]
 
+    # Get Beers for given beerID
+    names = pd.read_csv(path + "testBeer.csv")
+    beers = names[names.beerId.isin(filtered_data.beerId)]
 
-    # Use Panda
-    names = open(path + "testBeer.csv", "r")
-    allFile2 = csv.reader(names, delimiter=",")
-    namedBeers = []  # list of beers-names
-    count = 0
-
-    for row in allFile2:
-        if(count != 0):
-            if(row[0] in idBeers):
-                namedBeers.append(row[1])
-        count += 1
-    names.close()
-
-    # Use Panda
-    similars = open(path+"result.csv", "r")
-    allFile3 = csv.reader(similars, delimiter=",")
-    result = []
-
-    for row in allFile3:
-        for i in range(0, len(namedBeers)):
-            if(row[0] == namedBeers[i] and float(row[2]) >= 0.6):
-                result.append(row[1])
-
-    result = list(set(result))
-    return result
+    # Get Beers from Result
+    similars = pd.read_csv(path + "result.csv")
+    filtered_data = similars[(similars.name1.isin(beers.name)) & (similars.number > 0.6)]
+    filtered_data = filtered_data[filtered_data.name1 != filtered_data.name2].drop_duplicates(subset="name2")
+    return filtered_data[["name2","number"]]
 
 
 if __name__ == "__main__":
-    # Change Path
     path = "/Users/lrazovic/Projects/Beerer/Reccomender/dataset/"
-    print(choiceBeers("4", path))
+    print(choiceBeers("1", path))

@@ -1,6 +1,10 @@
 
-.DS_Store
-iOS App/.DS_Store
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.DS_Store
 iOS App/Podfile.lock
 iOS App/Pods/*
 *.xcuserstate
@@ -12,3 +16,27 @@ iOS App/Beerer.xcworkspace/contents.xcworkspacedata
 iOS App/Beerer.xcworkspace/xcuserdata/lrazovic.xcuserdatad/UserInterfaceState.xcuserstate
 iOS App/Beerer.xcworkspace/xcuserdata/lrazovic.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 iOS App/Beerer.xcworkspace/xcuserdata/lrazovic.xcuserdatad/*
+iOS App/build/
+iOS App/DerivedData/
+
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+
+
+.vscode/settings.json

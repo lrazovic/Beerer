@@ -27,7 +27,7 @@ def read_data(path):
     """ Reads in the dataset, and filters down ratings down to positive only"""
     ratings = pd.read_csv(path + "testRecommendation.csv")
     positive = ratings[ratings.rating >= 1]
-    beers = pd.read_csv(path + "beersTest.csv")
+    beers = pd.read_csv(path + "testBeer.csv")
     m = coo_matrix((positive['rating'].astype(numpy.int),
                     (positive['beerId'], positive['USR'])))
     m.data = numpy.ones(len(m.data))
@@ -87,9 +87,9 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
             # if beerid < lun:
             if m.indptr[beerid] == m.indptr[beerid + 1]:
                 continue
-            beer = beer_lookup[str(beerid)]
+            beer = beer_lookup[beerid]
             for other, score in model.similar_items(beerid, 10):
-                o.write("%s,%s,%s\n" % (beer, beer_lookup[str(other)], score))
+                o.write("%s,%s,%s\n" % (beer, beer_lookup[other], score))
             # else:
             # pass
 
