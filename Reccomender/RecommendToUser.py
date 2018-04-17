@@ -2,29 +2,13 @@
 Organize the beers liked for a user
 """
 
-from __future__ import print_function
-
-import argparse
-import logging
-import os
-import time
-import numpy as np
 import pandas as pd
-import csv
-from scipy.sparse import coo_matrix
-
-from implicit.als import AlternatingLeastSquares
-from implicit.bpr import BayesianPersonalizedRanking
-from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,
-                                         TFIDFRecommender, bm25_weight)
-
 
 def choiceBeers(userId, path):
 
     # Get beerID for given userId
     recomends = pd.read_csv(path + "testRecommendation.csv")
     filtered_data = recomends[recomends.USR == int(userId)]
-    beersId = filtered_data["beerId"]
 
     # Get Beers for given beerID
     names = pd.read_csv(path + "testBeer.csv")
