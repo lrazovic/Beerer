@@ -96,6 +96,7 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.beerCollectionOne {
             let cellOne = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell1", for: indexPath) as! CollectionViewCell
+            cellOne.hero.modifiers = [.useNoSnapshot, .spring(stiffness: 250, damping: 25)]
             cellOne.contentView.layer.cornerRadius = 14
             cellOne.contentView.layer.masksToBounds = true
             cellOne.imageView1.image = beerImages1[indexPath.row]

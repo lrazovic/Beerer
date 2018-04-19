@@ -157,7 +157,7 @@ class SwipeableView: UIView {
             let targetLine = (swipePoint, CGPoint.zero)
 
             return rect.perimeterLines
-                .flatMap { CGPoint.intersectionBetweenLines(targetLine, line2: $0) }
+                .compactMap { CGPoint.intersectionBetweenLines(targetLine, line2: $0) }
                 .map { centerDistance / $0.distanceTo(.zero) }
                 .min() ?? 0.0
         }

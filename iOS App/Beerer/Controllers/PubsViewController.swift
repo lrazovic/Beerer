@@ -22,7 +22,7 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var posizioneUtente: CLLocationCoordinate2D!
     var pointAnnotation: MKPointAnnotation!
     var pinAnnotationView: MKPinAnnotationView!
-    let googleKey = "AIzaSyDT9VTFyh8hW6YzcHtiejByvnlUJNmZ210"
+    let googleKey = "AIzaSyDcebxs3npP0RzShXKikck-pBlrR5m5AZg"
     let radius = 5000 //in meters
     var url: String!
     var swiftyJSONVar: JSON?
@@ -75,10 +75,12 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
     func downloadJSON(latitude: String, longitude: String) {
         self.url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(latitude),\(longitude)&keyword=pub&rankby=prominence&radius=\(radius)&type=bar&key=\(googleKey)"
+        print(self.url)
         Alamofire.request(url).validate().responseJSON { response in
             switch response.result {
             case .success:
                 self.swiftyJSONVar = JSON(response.result.value!)
+                print(self.swiftyJSONVar!)
                 return
             case .failure:
                 print("Errore")
@@ -104,8 +106,8 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     let photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(photoReference)&key=\(googleKey)"
                     cell.pubImage?.loadImageUsingCache(withUrl: photoUrl)
                 }
-                cell.starRatings.settings.fillMode = .precise
-                cell.starRatings.rating = swiftyJSONVar!["results"][indexPath.row]["rating"].doubleValue
+                // cell.starRatings.settings.fillMode = .precise
+                // cell.starRatings.rating = swiftyJSONVar!["results"][indexPath.row]["rating"].doubleValue
                 cell.titleLabel.text = swiftyJSONVar!["results"][indexPath.row]["name"].stringValue
                 if(swiftyJSONVar!["results"][indexPath.row]["opening_hours"]["open_now"].boolValue) {
                     cell.distanceLabel.text = "Aperto Ora"

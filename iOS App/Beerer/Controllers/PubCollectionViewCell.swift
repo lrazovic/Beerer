@@ -13,7 +13,7 @@ class PubCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var starRatings: CosmosView!
+    // @IBOutlet weak var starRatings: CosmosView!
     @IBOutlet weak var pubImage: UIImageView?
 
 }

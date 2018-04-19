@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZX-uC-Roi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZX-uC-Roi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -474,11 +474,11 @@
                                             <size key="itemSize" width="108" height="108"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="12" minY="12" maxX="12" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="vIH-GX-v3d" customClass="CollectionViewCell" customModule="Beerer" customModuleProvider="target">
-                                                <rect key="frame" x="12" y="0.0" width="108" height="108"/>
+                                                <rect key="frame" x="12" y="12" width="108" height="108"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
@@ -547,11 +547,12 @@
                         <viewLayoutGuide key="safeArea" id="wAc-2I-mC3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Wp4-Eu-ClA"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="beerCollection" destination="3UY-zH-NuD" id="ToQ-zr-BBP"/>
                         <outlet property="beerNumberText" destination="Ljt-tK-6bV" id="xda-Hk-u5C"/>
                         <outlet property="nameSurname" destination="IWp-e6-M6P" id="QL1-pf-ADQ"/>
-                        <segue destination="4dY-Oa-scQ" kind="show" identifier="profileToInfo" action="showDetailViewController:sender:" id="zb6-ig-eWP"/>
+                        <segue destination="4dY-Oa-scQ" kind="show" identifier="profileToInfo" id="zb6-ig-eWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sit-af-BUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,18 +574,18 @@
                                 </constraints>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1uD-aL-Cpd">
-                                <rect key="frame" x="0.0" y="351" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="343" width="375" height="285"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="0.0" id="0fv-7i-hJM">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="0fv-7i-hJM">
                                     <size key="itemSize" width="343" height="77"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="12" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="pubCell" id="uOo-aO-XZe" customClass="PubCollectionViewCell" customModule="Beerer" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="1" width="343" height="77"/>
+                                        <rect key="frame" x="16" y="12" width="343" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="77"/>
@@ -613,19 +614,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-zD-FZP" userLabel="starView" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="20" y="54" width="124" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
-                                                            <integer key="value" value="3"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -637,7 +625,6 @@
                                         <connections>
                                             <outlet property="distanceLabel" destination="gHJ-y6-QfJ" id="eXK-uW-qn6"/>
                                             <outlet property="pubImage" destination="PIh-Ny-icK" id="Lnc-0n-ILR"/>
-                                            <outlet property="starRatings" destination="Pgf-zD-FZP" id="9dv-pU-C2a"/>
                                             <outlet property="titleLabel" destination="qTR-CW-EDN" id="6Dh-1m-eiD"/>
                                         </connections>
                                     </collectionViewCell>
@@ -1044,7 +1031,7 @@ Register</string>
                         <viewLayoutGuide key="safeArea" id="ZYa-AO-gxL"/>
                     </view>
                     <connections>
-                        <segue destination="wpb-EW-2g5" kind="showDetail" identifier="toCards" action="showViewController:sender:" id="57m-yr-iMl"/>
+                        <segue destination="wpb-EW-2g5" kind="showDetail" identifier="toCards" id="57m-yr-iMl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alQ-1f-f83" userLabel="First Responder" sceneMemberID="firstResponder"/>

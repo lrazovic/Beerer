@@ -77,25 +77,15 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
     to_generate = sorted(list(beers['beerId']),
                          key=lambda x: -user_count.get(x, 0))
 
-    # lun = len(m.indptr) - 1
-    # print(to_generate)
-
     with codecs.open(output_filename, "w", "utf8") as o:
         o.write("%s,%s,%s\n\n" % ("name1", "name2", "number"))
         for beerid in to_generate:
             beerid = numpy.int(beerid)
-            # if beerid < lun:
             if m.indptr[beerid] == m.indptr[beerid + 1]:
                 continue
             beer = beer_lookup[beerid]
-            for other, score in model.similar_items(beerid, 10):
+            for other, score in model.similar_items(beerid, 6):
                 o.write("%s,%s,%s\n" % (beer, beer_lookup[other], score))
-            # else:
-            # pass
-
-    df = pd.read_csv(
-        "/Users/lrazovic/Projects/Beerer/Reccomender/dataset/result.csv")
-    df.to_json("/Users/lrazovic/Projects/Beerer/Reccomender/dataset/result.json")
 
 
 if __name__ == "__main__":
