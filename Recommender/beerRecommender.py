@@ -2,25 +2,17 @@
 Recommender System
 """
 
-from __future__ import print_function
-from itertools import groupby
-from collections import OrderedDict
-
-import argparse
 import codecs
 import logging
-import os
 import time
 import numpy
 import pandas as pd
-import json
 from scipy.sparse import coo_matrix
 
 
 from implicit.als import AlternatingLeastSquares
 from implicit.bpr import BayesianPersonalizedRanking
-from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,
-                                         TFIDFRecommender, bm25_weight)
+from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,TFIDFRecommender, bm25_weight)
 
 
 def read_data(path):
@@ -90,6 +82,6 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
-    input = "/Users/lrazovic/Projects/Beerer/Reccomender/dataset/"
-    output = "/Users/lrazovic/Projects/Beerer/Reccomender/dataset/result.csv"
+    input = "/Users/lrazovic/Projects/BeererServer/dataset/"
+    output = "/Users/lrazovic/Projects/BeererServer/dataset/result.csv"
     calculate_similar_beers(input, output, "cosine")

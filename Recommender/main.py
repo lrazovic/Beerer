@@ -2,6 +2,7 @@ from flask import Flask
 import pandas as pd
 from beerRecommender import calculate_similar_beers
 from userRecommender import choiceBeers
+from beerInfo import getBeerInfo
 
 app = Flask(__name__)
 
@@ -22,6 +23,10 @@ def config():
 @app.route('/user/<int:post_id>')
 def user(post_id):
     return choiceBeers(str(post_id), input)
+
+@app.route('/beer/<int:post_id>')
+def beer(post_id):
+    return getBeerInfo(post_id, input)
 
 
 if __name__ == '__main__':

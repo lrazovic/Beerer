@@ -33,5 +33,5 @@ def choiceBeers(userId, path):
 
 
 if __name__ == "__main__":
-    path = "/Users/lrazovic/Projects/Beerer/Reccomender/dataset/"
+    path = "/Users/lrazovic/Projects/BeererServer/dataset/"
     print(choiceBeers("1", path))
