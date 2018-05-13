@@ -1,5 +1,7 @@
 import UIKit
 import pop
+import Firebase
+import Alamofire
 
 class SwipeableView: UIView {
 
@@ -165,11 +167,13 @@ class SwipeableView: UIView {
 
     private func endedPanAnimation() {
         if let dragDirection = dragDirection, dragPercentage >= SwipeableView.swipePercentageMargin {
+            SwipeableView.beer.setId(value: (Auth.auth().currentUser?.uid.description)!)
             let translationAnimation = POPBasicAnimation(propertyNamed: kPOPLayerTranslationXY)
             translationAnimation?.duration = SwipeableView.finalizeSwipeActionAnimationDuration
             translationAnimation?.fromValue = NSValue(cgPoint: POPLayerGetTranslationXY(layer))
             translationAnimation?.toValue = NSValue(cgPoint: animationPointForDirection(dragDirection))
             layer.pop_add(translationAnimation, forKey: "swipeTranslationAnimation")
+
             if dragDirection == .right { SwipeableView.beer.appenValue(value: 1) }
             else if(dragDirection == .left) { SwipeableView.beer.appenValue(value: 0) }
             else { SwipeableView.beer.appenValue(value: 2) }
@@ -178,11 +182,11 @@ class SwipeableView: UIView {
                 json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
             }
             if SwipeableView.beer.countBeer() == 9 {
-                print(json!)
-                print("End Setup")
+                print("RESULT: \(json!)")
                 let homeViewController = self.parentViewController().storyboard?.instantiateViewController(withIdentifier: "tabHome")
                 self.parentViewController().present(homeViewController!, animated: true, completion: nil)
             }
+
             self.delegate?.didEndSwipe(onView: self)
         } else {
             resetCardViewPosition()

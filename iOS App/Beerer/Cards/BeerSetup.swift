@@ -7,11 +7,15 @@
 //
 
 struct beerSetup: Codable {
-    let userId: String
+    var userId: String
     var beerValue: [Int]
     
     mutating func appenValue(value: Int) {
         beerValue.append(value)
+    }
+
+    mutating func setId(value: String) {
+        userId = value
     }
     
     func countBeer() -> Int {
