@@ -1,17 +1,17 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, "11.0"
 
-target 'Beerer' do
+target "Beerer" do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for Beerer
-  pod 'Hero'
-  pod 'pop'
-  pod 'SwiftyJSON'
-  pod 'Alamofire'
-  pod "Lock"
-  pod 'Auth0'
-  pod 'Cosmos'
-
+  pod "Hero"
+  pod "pop"
+  pod "SwiftyJSON"
+  pod "Alamofire"
+  pod "Firebase/Auth"
+  pod "FirebaseUI", '~> 5.0'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Facebook'
 end

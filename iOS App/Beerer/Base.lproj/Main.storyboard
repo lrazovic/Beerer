@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iZX-uC-Roi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SFs-dD-dmT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -373,10 +373,10 @@
             </objects>
             <point key="canvasLocation" x="2024.8" y="241.52923538230885"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--TabViewController-->
         <scene sceneID="g4l-Cc-HWq">
             <objects>
-                <tabBarController storyboardIdentifier="tabHome" automaticallyAdjustsScrollViewInsets="NO" id="iZX-uC-Roi" customClass="TabViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabHome" title="TabViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iZX-uC-Roi" customClass="TabViewController" customModule="Beerer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" autoresizesSubviews="NO" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="lMd-Kv-kCO">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -982,11 +982,17 @@
                                 <rect key="frame" x="20" y="416" width="335" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Button"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="vf1-qL-H00" eventType="touchUpInside" id="ERf-0w-heC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLI-BF-ccw">
                                 <rect key="frame" x="20" y="484" width="335" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ButtonBlack"/>
+                                <connections>
+                                    <action selector="signupButton:" destination="vf1-qL-H00" eventType="touchUpInside" id="fX6-na-W7Y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qku-nA-VKi">
                                 <rect key="frame" x="93" y="574" width="189" height="30"/>
@@ -995,17 +1001,11 @@
                                 <state key="normal" title="More ways to login">
                                     <color key="titleColor" red="0.99607843139999996" green="0.75686274509999996" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="socialLogin:" destination="vf1-qL-H00" eventType="touchUpInside" id="VpA-H4-iFT"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPR-xo-Ykg">
-                                <rect key="frame" x="20" y="190" width="343" height="190"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Login" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPR-xo-Ykg">
+                                <rect key="frame" x="20" y="190" width="307" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Please Login
-or
-Register</string>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="44"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1026,11 +1026,41 @@ Register</string>
                                 <rect key="frame" x="20" y="78" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P8e-Jz-xkE">
+                                <rect key="frame" x="20" y="296" width="335" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F6b-cs-tn4">
+                                <rect key="frame" x="20" y="365" width="335" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okp-sa-4Ot">
+                                <rect key="frame" x="20" y="268" width="39" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-S1-O5F">
+                                <rect key="frame" x="20" y="337" width="70" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ZYa-AO-gxL"/>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="P8e-Jz-xkE" id="gN2-M2-2ja"/>
+                        <outlet property="passwordField" destination="F6b-cs-tn4" id="8G8-Yw-hty"/>
                         <segue destination="wpb-EW-2g5" kind="showDetail" identifier="toCards" id="57m-yr-iMl"/>
                     </connections>
                 </viewController>
@@ -1227,7 +1257,7 @@ If you have never drunk it, swipe up!</string>
         <image name="user_male" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j57-97-K6M"/>
+        <segue reference="P9F-Uy-PtL"/>
         <segue reference="YVQ-fP-DVq"/>
     </inferredMetricsTieBreakers>
 </document>

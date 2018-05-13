@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cosmos
 
 class PubCollectionViewCell: UICollectionViewCell {
     

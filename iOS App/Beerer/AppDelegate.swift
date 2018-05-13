@@ -1,16 +1,18 @@
 import UIKit
-import Auth0
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        return Auth0.resumeAuth(url, options: options)
-    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        if(Auth.auth().currentUser != nil) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+            let viewController = storyboard.instantiateViewController(withIdentifier: "tabHome") as! TabViewController
+            self.window?.rootViewController = viewController
+        }
         return true
     }
 

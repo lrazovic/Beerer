@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Auth0
+import Firebase
 
 class ProfileViewController: UIViewController {
 
@@ -39,7 +39,12 @@ class ProfileViewController: UIViewController {
     let pub6 = Pub(name: "Trinity Pub", city: "Civitavecchia")
     var beerPubs1: [[Pub]]!
     @IBAction func settingButton(_ sender: UIButton) {
-        SessionManager.shared.logout()
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+        } catch (let error) {
+            print("Auth sign out failed: \(error)")
+        }
     }
 
     @IBOutlet weak var nameSurname: UILabel!

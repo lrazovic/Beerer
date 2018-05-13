@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Auth0
+// import Auth0
 
 class WalkViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
 

@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Trovare Pub vicino a te</string>
+	<key>FacebookDisplayName</key>
+	<string>Beerer</string>
+	<key>FacebookAppID</key>
+	<string>fb765793173613976</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -28,12 +30,20 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>None</string>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>auth0</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+				<string>com.googleusercontent.apps.13446476969-v46le4k22t35th32082v31trit0ujnpc</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb765793173613976</string>
 			</array>
 		</dict>
 	</array>
@@ -49,6 +59,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>The camera is used to take cute pictures of beers.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Trovare Pub vicino a te</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
