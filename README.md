@@ -14,13 +14,13 @@
 
 • [Milestone 2 slides](https://docs.google.com/presentation/d/11R3s0wjq0sIRGkUxJupyLS3dIm1iy0jIH5Dc4NJsvLE/edit?usp=sharing) 
 
-• [Demo](https://drive.google.com/open?id=1uWOXnex1aX6GFSd1TSkcKrOkFbsr5sQ-)
+• [UI Prototype](https://drive.google.com/open?id=1uWOXnex1aX6GFSd1TSkcKrOkFbsr5sQ-)
 
 ### Milestone 3
 
-• [Milestone 3 slides]()  
+• [Milestone 3 slides](https://drive.google.com/file/d/1-FqYeYlxXNMk8FAJQK4Ny0QDs0JAygdZ/view?usp=sharing)  
 
-• [Demo]()
+• [Real Time Demo]()
 
 
 ### Issues section
