@@ -27,6 +27,7 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var url: String!
     var swiftyJSONVar: JSON?
     var pubsCout: Int?
+    let gradientMaskLayer = CAGradientLayer()
 
     // MARK: - Default
 
@@ -40,6 +41,11 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         pubsColletion.dataSource = self
         self.mapView.delegate = self
         self.managerPosizione = CLLocationManager()
+        gradientMaskLayer.frame = mapView.bounds
+        gradientMaskLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
+        gradientMaskLayer.locations = [0, 0.08, 0.64, 1]
+        pubsColletion.layer.mask = nil
+        mapView.layer.mask = gradientMaskLayer
         managerPosizione.delegate = self
         managerPosizione.desiredAccuracy = kCLLocationAccuracyHundredMeters
         managerPosizione.requestWhenInUseAuthorization()

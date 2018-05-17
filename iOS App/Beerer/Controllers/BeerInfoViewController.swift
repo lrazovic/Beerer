@@ -24,7 +24,7 @@ class BeerInfoViewController: UIViewController {
     @IBOutlet weak var beerPubsLabel: UIButton!
     var passedBeer: Beer!
     var url: String!
-    let googleKey = "AIzaSyDT9VTFyh8hW6YzcHtiejByvnlUJNmZ210"
+    let googleKey = "AIzaSyDcebxs3npP0RzShXKikck-pBlrR5m5AZg"
 
     // MARK: - IBAction
 
@@ -50,7 +50,9 @@ class BeerInfoViewController: UIViewController {
     }
 
     @IBAction func closeButton(_ sender: UIButton) {
-        self.hero.dismissViewController()
+        // self.hero.dismissViewController()
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 
     // MARK: - View
@@ -68,7 +70,7 @@ class BeerInfoViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         UIApplication.shared.isStatusBarHidden = false
     }
 

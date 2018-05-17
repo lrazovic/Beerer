@@ -10,8 +10,6 @@ target "Beerer" do
   pod "pop"
   pod "SwiftyJSON"
   pod "Alamofire"
+  pod "Firebase/Core"
   pod "Firebase/Auth"
-  pod "FirebaseUI", '~> 5.0'
-  pod 'FirebaseUI/Google'
-  pod 'FirebaseUI/Facebook'
 end

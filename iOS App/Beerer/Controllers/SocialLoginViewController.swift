@@ -17,11 +17,7 @@ class SocialLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordField.isSecureTextEntry = true
-    }
-
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true;
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
 
 
