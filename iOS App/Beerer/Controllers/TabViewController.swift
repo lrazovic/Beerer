@@ -10,8 +10,6 @@ import UIKit
 
 class TabViewController: UITabBarController {
 
-    // var profile: UserInfo!
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
