@@ -12,4 +12,5 @@ target "Beerer" do
   pod "Alamofire"
   pod "Firebase/Core"
   pod "Firebase/Auth"
+  pod "Cosmos"
 end

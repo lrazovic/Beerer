@@ -9,8 +9,7 @@
 import UIKit
 import Firebase
 
-
-class SocialLoginViewController: UIViewController {
+class SocialLoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 
@@ -18,26 +17,16 @@ class SocialLoginViewController: UIViewController {
         super.viewDidLoad()
         passwordField.isSecureTextEntry = true
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        self.passwordField.delegate = self
     }
 
-
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passwordField.resignFirstResponder()
+        login()
+        return true
+    }
     @IBAction func loginButton(_ sender: UIButton) {
-        Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { user, error in
-            if let error = error, user == nil {
-                let alert = UIAlertController(title: "Sign In Failed",
-                                              message: error.localizedDescription,
-                                              preferredStyle: .alert)
-
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                print("login ok")
-                self.performSegue(withIdentifier: "toCards", sender: nil)
-            }
-        }
-
+        login()
     }
 
     @IBAction func signupButton(_ sender: UIButton) {
@@ -49,6 +38,23 @@ class SocialLoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "toCards", sender: (Any).self)
             } else {
                 print("Errore  \(String(describing: error?.localizedDescription))")
+            }
+        }
+    }
+    
+    func login(){
+        Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { user, error in
+            if let error = error, user == nil {
+                let alert = UIAlertController(title: "Sign In Failed",
+                                              message: error.localizedDescription,
+                                              preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                print("login ok")
+                self.performSegue(withIdentifier: "toCards", sender: nil)
             }
         }
     }

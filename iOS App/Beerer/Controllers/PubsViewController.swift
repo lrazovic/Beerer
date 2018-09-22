@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import Alamofire
 import SwiftyJSON
+import Cosmos
 
 class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -22,7 +23,7 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var posizioneUtente: CLLocationCoordinate2D!
     var pointAnnotation: MKPointAnnotation!
     var pinAnnotationView: MKPinAnnotationView!
-    let googleKey = "AIzaSyDcebxs3npP0RzShXKikck-pBlrR5m5AZg"
+    let googleKey = "AIzaSyA6k8dk_jQkCdMkIVRDsMoKXau-UZqiw-A"
     let radius = 5000 //in meters
     var url: String!
     var swiftyJSONVar: JSON?
@@ -112,8 +113,8 @@ class PubsViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     let photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(photoReference)&key=\(googleKey)"
                     cell.pubImage?.loadImageUsingCache(withUrl: photoUrl)
                 }
-                // cell.starRatings.settings.fillMode = .precise
-                // cell.starRatings.rating = swiftyJSONVar!["results"][indexPath.row]["rating"].doubleValue
+                cell.starRatings.settings.fillMode = .precise
+                cell.starRatings.rating = swiftyJSONVar!["results"][indexPath.row]["rating"].doubleValue
                 cell.titleLabel.text = swiftyJSONVar!["results"][indexPath.row]["name"].stringValue
                 if(swiftyJSONVar!["results"][indexPath.row]["opening_hours"]["open_now"].boolValue) {
                     cell.distanceLabel.text = "Aperto Ora"

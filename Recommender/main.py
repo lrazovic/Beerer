@@ -24,6 +24,12 @@ def config():
 def user(post_id):
     return choiceBeers(str(post_id), input)
 
+@app.route('/setupuser/<int:post_id>')
+def setupuser(post_id):
+    request_json = request.get_json()
+    # return choiceBeers(str(post_id), input)
+    return "Ok"
+
 @app.route('/beer/<int:post_id>')
 def beer(post_id):
     return getBeerInfo(post_id, input)

@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var beerCollection: UICollectionView!
     @IBOutlet weak var beerNumberText: UILabel!
+    @IBOutlet weak var nameSurname: UILabel!
 
     let beerImages1: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"), #imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "ipa5.jpg"),#imageLiteral(resourceName: "ipa6.jpg"),#imageLiteral(resourceName: "Guineu-Winter-Ale-6.8_-Bottle-330ml.jpg")]
     let beerNames1 = ["Gipsy Funk", "Sheltered Spirit", "Partizan", "Cold Spark", "Bras", "Peroni","Gipsy Funk", "Sheltered Spirit", "Partizan", "Cold Spark", "Bras", "Peroni"]
@@ -38,6 +39,7 @@ class ProfileViewController: UIViewController {
     let pub5 = Pub(name: "King Edward GastroPub", city: "Civitavecchia")
     let pub6 = Pub(name: "Trinity Pub", city: "Civitavecchia")
     var beerPubs1: [[Pub]]!
+    
     @IBAction func settingButton(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
@@ -47,11 +49,8 @@ class ProfileViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var nameSurname: UILabel!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Test")
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         beerPubs1 = [[pub1, pub2], [pub2], [pub3], [pub4], [pub5], [pub6],[pub1, pub2], [pub2], [pub3], [pub4], [pub5], [pub6]]
         beerCollection.delegate = self

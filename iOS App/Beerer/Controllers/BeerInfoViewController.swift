@@ -24,7 +24,7 @@ class BeerInfoViewController: UIViewController {
     @IBOutlet weak var beerPubsLabel: UIButton!
     var passedBeer: Beer!
     var url: String!
-    let googleKey = "AIzaSyDcebxs3npP0RzShXKikck-pBlrR5m5AZg"
+    let googleKey = "AIzaSyA6k8dk_jQkCdMkIVRDsMoKXau-UZqiw-A"
 
     // MARK: - IBAction
 
@@ -34,6 +34,7 @@ class BeerInfoViewController: UIViewController {
             switch response.result {
             case .success:
                 let swiftyJsonVar = JSON(response.result.value!)
+                print(swiftyJsonVar)
                 if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
                     let lat = swiftyJsonVar["results"][0]["geometry"]["location"]["lat"].stringValue
                     let lon = swiftyJsonVar["results"][0]["geometry"]["location"]["lng"].stringValue
@@ -60,6 +61,7 @@ class BeerInfoViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -79,7 +81,6 @@ class BeerInfoViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         self.beerImage?.image = passedBeer.beerImage
         self.beerName.text = passedBeer.beerName.uppercased()
-        // self.beerVariety.text = passedBeer.beerVariety
         self.beerTemp.text = String(passedBeer.beerTemp) + " %"
         self.beerDescription.text = "“" + passedBeer.beerDescription + "“"
         self.beerMatch.text = String(passedBeer.beerPercentage) + "%"

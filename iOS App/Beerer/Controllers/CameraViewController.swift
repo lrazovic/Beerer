@@ -12,6 +12,7 @@ import AVFoundation
 class CameraViewController: UIViewController {
 
     @IBAction func scatta(_ sender: UIButton) {
+        
     }
     @IBOutlet weak var scattaButton: UIButton!
     @IBOutlet weak var sfondoView: UIImageView!

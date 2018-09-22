@@ -19,7 +19,6 @@ class CardsViewController: UIViewController {
     @IBOutlet weak var beerCollectionTwo: UICollectionView!
 
     let beerImages1: [UIImage]! = [#imageLiteral(resourceName: "De-Molen-good_bad_ugly.jpg"),#imageLiteral(resourceName: "Edge-Bras-KNuckles.jpg"),#imageLiteral(resourceName: "Guineu-Winter-Ale-6.8_-Bottle-330ml.jpg"),#imageLiteral(resourceName: "Kees-Wee-Heavy-Scotch-Ale-8.5_-330ml_brown.jpg"),#imageLiteral(resourceName: "Laugar – Txo Brown Ale.jpg")]
-    // let beerImages2: [UIImage]! = [#imageLiteral(resourceName: "8wired-GypsyFunk2-1.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg"), #imageLiteral(resourceName: "Partizan-Smoking-Jacket-Tobacco-Porter-5.1_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Cold_Spark_Bottle_Mock.jpg"), #imageLiteral(resourceName: "Laugar-Braskadi-Cacao-And-Raisin-Imperial-Stout-10.5_-Bottle-330ml.jpg"), #imageLiteral(resourceName: "Siren-Sheltered-Spirit-BA-Imperial-Porter-14_-330ml.jpg")]
     let beerImages2: [UIImage]! = [#imageLiteral(resourceName: "ipa1.jpg"),#imageLiteral(resourceName: "ipa2.jpg"),#imageLiteral(resourceName: "ipa3.jpg"),#imageLiteral(resourceName: "ipa4.jpg"),#imageLiteral(resourceName: "ipa5.jpg"),#imageLiteral(resourceName: "ipa6.jpg")]
     let beerNames1 = ["De Molen x Kees", "Edge – Brass", "Guineu – Winter", "Kees – Wee Heavy", "Laugar – Txo", "Oedipus"]
     let beerNames2 = ["Browar Rockmill", "Juicy Delight", "Laugar", "Naparbier x La Quince", "Rascals – Wunderbar", "Rascals – Swankee"]
@@ -52,6 +51,10 @@ class CardsViewController: UIViewController {
 
 
     // MARK: - Default
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
