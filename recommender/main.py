@@ -1,9 +1,10 @@
 from flask import Flask
-from flask import request
 from flask import jsonify
-from beerRecommender import calculate_similar_beers
-from userRecommender import choiceBeers
-from beerInfo import getBeerInfo
+
+# from flask import request
+from beer_recommender import calculate_similar_beers
+from user_recommender import choice_beers
+from beer_info import get_beer_info
 
 app = Flask(__name__)
 
@@ -19,24 +20,26 @@ def hello():
 @app.route("/config")
 def config():
     calculate_similar_beers(input, output, "cosine")
-    return "Config"
+    return "Ok"
 
 
 @app.route("/user/<int:post_id>")
 def user(post_id):
-    return choiceBeers(str(post_id), input)
+    beers = choice_beers(str(post_id), input)
+    return jsonify(beers)
 
 
 @app.route("/setupuser/<int:post_id>")
 def setupuser(post_id):
-    request_json = request.get_json()
-    return choiceBeers(str(post_id), input)
+    # request_json = request.get_json()
+    beers = choice_beers(str(post_id), input)
+    return jsonify(beers)
 
 
 @app.route("/beer/<int:post_id>")
 def beer(post_id):
-    info = getBeerInfo(post_id, input)
-    return info
+    info = get_beer_info(post_id, input)
+    return jsonify(info)
 
 
 if __name__ == "__main__":

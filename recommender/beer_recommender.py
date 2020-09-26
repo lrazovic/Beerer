@@ -78,7 +78,10 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
             beerid = numpy.int(beerid)
             beer = beer_lookup[beerid]
             for other, score in model.similar_items(beerid, 6):
-                file.write("%s, %s, %s\n" % (beer, beer_lookup[other], round(score, 3)))
+                name1 = beer
+                name2 = beer_lookup[other]
+                if name1 != name2:
+                    file.write("%s,%s,%s\n" % (name1, name2, round(score, 3)))
 
 
 if __name__ == "__main__":
