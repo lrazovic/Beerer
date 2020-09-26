@@ -9,10 +9,14 @@ import numpy
 import pandas as pd
 from scipy.sparse import coo_matrix
 
-
 from implicit.als import AlternatingLeastSquares
 from implicit.bpr import BayesianPersonalizedRanking
-from implicit.nearest_neighbours import (BM25Recommender, CosineRecommender,TFIDFRecommender, bm25_weight)
+from implicit.nearest_neighbours import (
+    BM25Recommender,
+    CosineRecommender,
+    TFIDFRecommender,
+    bm25_weight,
+)
 
 
 def read_data(path):
@@ -20,8 +24,9 @@ def read_data(path):
     ratings = pd.read_csv(path + "testRecommendation.csv")
     positive = ratings[ratings.rating >= 1]
     beers = pd.read_csv(path + "testBeer.csv")
-    m = coo_matrix((positive['rating'].astype(numpy.int),
-                    (positive['beerId'], positive['USR'])))
+    m = coo_matrix(
+        (positive["rating"].astype(numpy.int), (positive["beerId"], positive["USR"]))
+    )
     m.data = numpy.ones(len(m.data))
     return ratings, beers, m
 
@@ -36,10 +41,9 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
     # generate a recommender model based off the input params
     if model_name == "als":
         model = AlternatingLeastSquares()
-
         # lets weight these models by bm25weight.
         logging.debug("weighting matrix by bm25_weight")
-        m = bm25_weight(m,  B=0.9) * 5
+        m = bm25_weight(m, B=0.9) * 5
 
     elif model_name == "bpr":
         model = BayesianPersonalizedRanking()
@@ -64,24 +68,21 @@ def calculate_similar_beers(input_path, output_filename, model_name="cosine"):
     logging.debug("trained model '%s' in %s", model_name, time.time() - start)
     logging.debug("calculating top beers")
 
-    user_count = ratings.groupby('beerId').size()
-    beer_lookup = dict((i, m) for i, m in zip(beers['beerId'], beers['name']))
-    to_generate = sorted(list(beers['beerId']),
-                         key=lambda x: -user_count.get(x, 0))
+    user_count = ratings.groupby("beerId").size()
+    beer_lookup = dict((i, m) for i, m in zip(beers["beerId"], beers["name"]))
+    to_generate = sorted(set(beers["beerId"]), key=lambda x: -user_count.get(x, 0))
 
-    with codecs.open(output_filename, "w", "utf8") as o:
-        o.write("%s,%s,%s\n\n" % ("name1", "name2", "number"))
+    with codecs.open(output_filename, "w", "utf8") as file:
+        file.write("%s,%s,%s\n\n" % ("name1", "name2", "number"))
         for beerid in to_generate:
             beerid = numpy.int(beerid)
-            if m.indptr[beerid] == m.indptr[beerid + 1]:
-                continue
             beer = beer_lookup[beerid]
             for other, score in model.similar_items(beerid, 6):
-                o.write("%s,%s,%s\n" % (beer, beer_lookup[other], score))
+                file.write("%s, %s, %s\n" % (beer, beer_lookup[other], round(score, 3)))
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
-    input = "/Users/lrazovic/Projects/BeererServer/dataset/"
-    output = "/Users/lrazovic/Projects/BeererServer/dataset/result.csv"
+    input = "dataset/"
+    output = "dataset/result.csv"
     calculate_similar_beers(input, output, "cosine")
