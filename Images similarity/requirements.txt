@@ -1,6 +1,0 @@
-scipy
-argparse
-pillow
-numpy
-ssim
-pyssim
