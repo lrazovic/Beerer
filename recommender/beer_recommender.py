@@ -88,4 +88,4 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     input = "dataset/"
     output = "dataset/result.csv"
-    calculate_similar_beers(input, output, "cosine")
+    calculate_similar_beers(input, output, "als")

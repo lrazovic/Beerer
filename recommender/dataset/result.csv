@@ -1,77 +1,83 @@
 name1,name2,number
 
-Peroni,Beewolf Braggot,0.816
-Peroni,Ichnusa,0.775
-Peroni,Alto Tevere,0.667
-Peroni,Franziskaner,0.667
-Peroni,Aegir Kveite,0.577
-Guerilla,Ichnusa,0.894
-Guerilla,Quarry Rock Red,0.866
-Guerilla,Triple,0.866
-Guerilla,Alto tevere noire,0.707
-Guerilla,Peroni,0.577
-Ichnusa,Guerilla,0.894
-Ichnusa,Peroni,0.775
-Ichnusa,Alto Tevere,0.775
-Ichnusa,Franziskaner,0.775
-Ichnusa,Quarry Rock Red,0.775
-Aegir Kveite,Beewolf Braggot,0.707
-Aegir Kveite,Peroni,0.577
-Aegir Kveite,Alto Tevere,0.577
-Aegir Kveite,Franziskaner,0.577
-Aegir Kveite,Ichnusa,0.447
-Nastro Azzurro,Alto tevere goldie,1.0
-Nastro Azzurro,Bad Penny,1.0
-Nastro Azzurro,Peroni,0.577
-Nastro Azzurro,Franziskaner,0.577
-Nastro Azzurro,Quarry Rock Red,0.577
-Alto Tevere,Beewolf Braggot,0.816
-Alto Tevere,Ichnusa,0.775
-Alto Tevere,Peroni,0.667
-Alto Tevere,Franziskaner,0.667
-Alto Tevere,Aegir Kveite,0.577
-Alto tevere goldie,Nastro Azzurro,1.0
-Alto tevere goldie,Bad Penny,1.0
-Alto tevere goldie,Peroni,0.577
-Alto tevere goldie,Franziskaner,0.577
-Alto tevere goldie,Quarry Rock Red,0.577
-Franziskaner,Ichnusa,0.775
-Franziskaner,Peroni,0.667
-Franziskaner,Alto Tevere,0.667
-Franziskaner,Quarry Rock Red,0.667
-Franziskaner,Triple,0.667
-Triple,Quarry Rock Red,1.0
-Triple,Guerilla,0.866
-Triple,Ichnusa,0.775
-Triple,Franziskaner,0.667
-Triple,Nastro Azzurro,0.577
-Alto tevere noire,Guerilla,0.707
-Alto tevere noire,Heineken,0.707
-Alto tevere noire,Ichnusa,0.632
-Alto tevere noire,Beewolf Braggot,0.5
-Alto tevere noire,Peroni,0.408
-Bad Penny,Nastro Azzurro,1.0
-Bad Penny,Alto tevere goldie,1.0
-Bad Penny,Peroni,0.577
-Bad Penny,Franziskaner,0.577
-Bad Penny,Quarry Rock Red,0.577
-Beewolf Braggot,Peroni,0.816
-Beewolf Braggot,Alto Tevere,0.816
-Beewolf Braggot,Aegir Kveite,0.707
-Beewolf Braggot,Ichnusa,0.632
-Beewolf Braggot,Alto tevere noire,0.5
-Heineken,Alto tevere noire,0.707
-Heineken,Quarry Rock Red,0.577
-Heineken,Triple,0.577
-Heineken,Guerilla,0.5
-Heineken,Ichnusa,0.447
-Trafalgar IPA,Alto Tevere,0.577
-Trafalgar IPA,Franziskaner,0.577
-Trafalgar IPA,Quarry Rock Red,0.577
-Trafalgar IPA,Triple,0.577
-Trafalgar IPA,Guerilla,0.5
-Quarry Rock Red,Triple,1.0
-Quarry Rock Red,Guerilla,0.866
-Quarry Rock Red,Ichnusa,0.775
-Quarry Rock Red,Franziskaner,0.667
-Quarry Rock Red,Nastro Azzurro,0.577
+Peroni,Beewolf Braggot,0.67
+Peroni,Alto tevere goldie,0.625
+Peroni,Bad Penny,0.623
+Peroni,Nastro Azzurro,0.621
+Peroni,Ichnusa,0.524
+Guerilla,Ichnusa,0.666
+Guerilla,Quarry Rock Red,0.568
+Guerilla,Triple,0.565
+Guerilla,Alto tevere noire,0.564
+Guerilla,Alto Tevere,0.359
+Ichnusa,Guerilla,0.666
+Ichnusa,Triple,0.612
+Ichnusa,Quarry Rock Red,0.603
+Ichnusa,Franziskaner,0.544
+Ichnusa,Peroni,0.524
+Aegir Kveite,Franziskaner,0.509
+Aegir Kveite,Beewolf Braggot,0.342
+Aegir Kveite,Heineken,0.305
+Aegir Kveite,Ichnusa,0.269
+Aegir Kveite,Peroni,0.172
+Nastro Azzurro,Bad Penny,0.971
+Nastro Azzurro,Alto tevere goldie,0.967
+Nastro Azzurro,Peroni,0.621
+Nastro Azzurro,Franziskaner,0.368
+Nastro Azzurro,Triple,0.347
+Alto Tevere,Trafalgar IPA,0.625
+Alto Tevere,Beewolf Braggot,0.606
+Alto Tevere,Ichnusa,0.498
+Alto Tevere,Guerilla,0.359
+Alto Tevere,Franziskaner,0.325
+Alto tevere goldie,Bad Penny,0.979
+Alto tevere goldie,Nastro Azzurro,0.967
+Alto tevere goldie,Peroni,0.625
+Alto tevere goldie,Franziskaner,0.363
+Alto tevere goldie,Triple,0.351
+Franziskaner,Ichnusa,0.544
+Franziskaner,Quarry Rock Red,0.539
+Franziskaner,Triple,0.536
+Franziskaner,Aegir Kveite,0.509
+Franziskaner,Trafalgar IPA,0.382
+Triple,Quarry Rock Red,0.979
+Triple,Ichnusa,0.612
+Triple,Guerilla,0.565
+Triple,Franziskaner,0.536
+Triple,Heineken,0.411
+Alto tevere noire,Guerilla,0.564
+Alto tevere noire,Heineken,0.426
+Alto tevere noire,Beewolf Braggot,0.421
+Alto tevere noire,Ichnusa,0.376
+Alto tevere noire,Peroni,0.208
+Phantasmagoria,Aegir Kveite,0.0
+Phantasmagoria,Peroni,0.0
+Phantasmagoria,Alto Tevere,0.0
+Phantasmagoria,Guerilla,0.0
+Phantasmagoria,Alto tevere noire,0.0
+Phantasmagoria,Triple,0.0
+Bad Penny,Alto tevere goldie,0.979
+Bad Penny,Nastro Azzurro,0.971
+Bad Penny,Peroni,0.623
+Bad Penny,Franziskaner,0.365
+Bad Penny,Quarry Rock Red,0.348
+Beewolf Braggot,Peroni,0.67
+Beewolf Braggot,Alto Tevere,0.606
+Beewolf Braggot,Ichnusa,0.436
+Beewolf Braggot,Alto tevere noire,0.421
+Beewolf Braggot,Aegir Kveite,0.342
+Heineken,Alto tevere noire,0.426
+Heineken,Triple,0.411
+Heineken,Quarry Rock Red,0.411
+Heineken,Aegir Kveite,0.305
+Heineken,Ichnusa,0.272
+Trafalgar IPA,Alto Tevere,0.625
+Trafalgar IPA,Franziskaner,0.382
+Trafalgar IPA,Triple,0.365
+Trafalgar IPA,Quarry Rock Red,0.364
+Trafalgar IPA,Guerilla,0.315
+Quarry Rock Red,Triple,0.979
+Quarry Rock Red,Ichnusa,0.603
+Quarry Rock Red,Guerilla,0.568
+Quarry Rock Red,Franziskaner,0.539
+Quarry Rock Red,Heineken,0.411
